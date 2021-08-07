@@ -9,11 +9,16 @@
 </head>
 <body>
     <div class="alert-box" id="alert">Alert 박스 
-        <button onclick="document.getElementById('alert').style.display='none'">닫기</button>
+        <button onclick="popupClose()">닫기</button>
     </div>
-    <button onclick="document.getElementById('alert').style.display = 'block'"> 열기 버튼</button>
+    <button onclick="popupOpen()"> 열기 버튼</button>
     <script>
-
+        function popupOpen(){
+            document.getElementById('alert').style.display = 'block'
+        }
+        function popupClose(){
+            document.getElementById('alert').style.display='none'
+        }
     </script>
 </body>
 </html>
