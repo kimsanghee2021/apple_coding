@@ -7,14 +7,37 @@
     <title>하나의 모달창을 js로 재활용 해보자</title>
 </head>
 <body>
-    <style>
-        .alert-box{background: #ccc; color:#333; border-radius: 5px; width: 150px; height: 60px;}
-    </style>
-
+<style>
+    .alert-box {
+    background: #91c8ed;
+    border-radius: 5px;
+    padding: 20px;
+    color: #468dbd;
+    display: none;
+    }
+</style>
     <div class="alert-box" id="alert">
-        <p>아이디를 입력해주세요.</p>
+        <p id="title">여기에 무슨 글자가 나올까요?</p>
+        <button id="close">X</button>
     </div>
-    <button onclick="">버튼 1</button>
-    <button onclick="">버튼 2</button>
+    <button onclick="popUp('아이디를 입력해라')">아이디 열기</button>
+    <button onclick="popUp('비번입력해라')">비번 열기</button>
+
+<script>
+    //1. 아이디 버튼 클릭시 alert창 title변경
+    //2. button 닫기 되기
+
+    function popUp(구멍2){
+        document.getElementById('title').innerHTML=구멍2;
+        document.getElementById('alert').style.display = 'block';
+    }
+    // function popUp2(){
+    //     document.getElementById('title').innerHTML='비번 제대로 작성하셈';
+    //     document.getElementById('alert').style.display = 'block';
+    // }
+    document.getElementById('close').addEventListener('click',function(){
+        document.getElementById('alert').style.display='none';
+    });
+</script>
 </body>
 </html>
