@@ -9,9 +9,35 @@
 </head>
 <body>
     <h4 id="test">안녕하세요</h4>
+    <p class="greeting"> 안녕하세요1 </p>
+    <p class="greeting"> 안녕하세요2 </p>
+    <p class="greeting"> 안녕하세요3 </p>
+
+    <button class="btn">버튼 btn</button>
+    <button class="btn">버튼 btn</button>
+    <button class="btn">버튼 btn</button>
+
     <script>
         $('#test').css({'width':'200px','height':'20px', 'background':'yellow','padding':'10px','color':'blue'});
-        
+        //document.getElementsByClassName('greeting')[0].innerHTML = '안녕'; //쌩자바스크립트는 요소 하나씩 변경해야함
+        //document.getElementsByClassName('greeting')[1].innerHTML = '안녕'; //쌩자바스크립트는 요소 하나씩 변경해야함
+        //document.getElementsByClassName('greeting')[2].innerHTML = '안녕'; //쌩자바스크립트는 요소 하나씩 변경해야함
+       // $('.greeting').html('안녕');
+
+    //    document.getElementsByClassName('btn')[0].addEventListener('click',function(){
+    //        alert('안내문 띄워주셈~!');
+    //    });
+    //    $('.btn').click(function(){
+    //        alert('안내문 다같이 띄워주슈~!');
+    //    });
+
+    //    document.getElementsByClassName('btn')[0].addEventListener('click',function(){
+    //        document.getElementsByClassName('greeting')[0].style.display = 'none';
+    //    });
+
+       $('.btn').click(function(){
+           $('.greeting').eq(0).fadeOut(3000);
+       });
     </script>
 </body>
 </html>
