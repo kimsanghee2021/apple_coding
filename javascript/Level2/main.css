@@ -4,4 +4,11 @@
   padding: 20px;
   color: #468dbd;
   display: none;
+  position: relative;
+}
+.close{
+  position: absolute; 
+  right:20px;  
+  top: 50%; 
+  transform: translateY(-50%);
 }

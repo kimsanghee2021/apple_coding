@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="alert-box" id="alert">Alert 박스 
-        <button onclick="popupOpen('none')">닫기</button>
+    <div class="alert-box" id="alert">
+        <p> Alert 박스 </p>
+        <button onclick="popupOpen('none')" class="close">닫기</button>
     </div>
     <button onclick="popupOpen('block')"> 열기 버튼</button>
+    
+    
     <script>
         function popupOpen(target){
             document.getElementById('alert').style.display = target;
@@ -19,7 +22,6 @@
        function pluse(구멍){
            2 + 구멍
        }
-       pluse(3);
        pluse(4);
        pluse(5);
     </script>
