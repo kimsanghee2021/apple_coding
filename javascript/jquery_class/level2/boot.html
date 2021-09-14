@@ -38,31 +38,43 @@
         <hr class="my-4">
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <a class="btn btn-primary btn-lg" href="#" role="button" id="login">Log In</a>
-      </div>
-    <script>
-        if(3 > 1){
-            console.log('안녕');
-        } //조건식에 들어가는 것들은 부등호만 들어간다. > < <= >= == 
+    </div>
+    <input type="password" id="test-input">
 
+    <form id="form">
+        <input type="text" id="form-id" placeholder="아이디" name="id">
+        <input type="password" id="form-password" placeholder="비밀번호" name="password">
+        <input type="submit" value="로그인" id="submit">
+    </form>
+
+    <script>
+        //만약에 input에 입력된 값이 '안녕'일때만 모달창이 뜨게 해라
         $('.btn').click(function(){
-            $('.black-background').fadeIn();
+            if($('#test-input').val() == '안녕' ){
+                $('.black-background').fadeIn();
+            }else{
+                alert('잘못입력하셨습니다. 다시 입력해 주세요.');
+            }
         });
+
+        //아이디값과 비밀번호 입력한 값이 지정된입력값과 같다면 얼럿창을 노출해라
+        $('#submit').click(function(){
+            if($('#form-id').val() === 'sanghee' && $('#form-password').val() === 'sanghee'){
+                alert('로그인을 성공했습니다.');
+            }else{
+                alert('로그인을 실패했습니다.');
+            }
+        });
+
+
+
+
+
+
         $('#nav-sub-button').click(function(){
             $('.nav-sub').slideToggle(500);
         });
     </script>
-
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-    -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
