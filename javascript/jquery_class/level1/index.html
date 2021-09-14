@@ -19,6 +19,12 @@
 
     <script>
         $('#test').css({'width':'200px','height':'20px', 'background':'yellow','padding':'10px','color':'blue'});
+        $('.greeting').html('안녕 이색햐');
+        document.getElementsByClassName('greeting')[2].innerHTML = '안녕반가워';
+        document.getElementsByClassName('btn')[0].addEventListener('click', function(){
+            alert('안내문을 띄워쥬쇼~~~');
+
+        });
         //document.getElementsByClassName('greeting')[0].innerHTML = '안녕'; //쌩자바스크립트는 요소 하나씩 변경해야함
         //document.getElementsByClassName('greeting')[1].innerHTML = '안녕'; //쌩자바스크립트는 요소 하나씩 변경해야함
         //document.getElementsByClassName('greeting')[2].innerHTML = '안녕'; //쌩자바스크립트는 요소 하나씩 변경해야함
