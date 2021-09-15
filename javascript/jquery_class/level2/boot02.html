@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>IF/ELSE, FUNCTION  실력 향상 과제</title>
+</head>
+<body>
+    <script>
+    //369게임 - 철수는 이 숫자가 3의 배수인지 아닌지를 파악하기 힘든 관계로 
+    //프로그래밍으로 이 문제를 해결하려고합니다. 
+    //어떤 숫자를 함수 안에 집어넣으면 박수를 쳐야할 지 말아야할지 알려주는 함수를 만들어보시오
+
+
+    // function 삼육구게임(target){
+    //     if( target % 9 === 0 ){
+    //         document.write('박수 <br>');
+    //     } else if( target % 3 === 0 ){
+    //         document.write('박수 X2 <br>');
+    //     } else {
+    //        document.write('통과 <br>');
+    //     }
+    // };
+    function 삼육구게임(target){
+        if(target == 3 || target == 6 || target == 9){
+            document.write('박수<br>');
+        } else{
+            document.write('통과<br>');
+        }
+    };
+    삼육구게임(3);
+    삼육구게임(8);
+    삼육구게임(12);
+    삼육구게임(9);
+
+
+    
+    </script>
+</body>
+</html>
