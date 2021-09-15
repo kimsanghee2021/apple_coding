@@ -18,9 +18,11 @@
             <form id="form01">
                 <div class="form-group">
                   <input type="email" class="form-control" placeholder="Email" id="email">
+                  <p id="email_notice">이메일을 작성해주세요.</p>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Password">
+                  <input type="password" class="form-control" placeholder="Password" id="password">
+                  <p id="password_notice">비밀번호를 작성해주세요.</p>
                 </div>
                 <button type="submit" class="btn btn-primary" id="submit">전송</button>
                 <button onclick="$('.black-background').fadeOut();" class="closeBtn" id="close">닫기</button>
@@ -70,13 +72,19 @@
              $('.black-background').fadeIn();
         });
 
-        //폼이 전송될때 만약에 이메일 input에 입력된 값이 빈칸일 경우, 폼의 전송을 막고 안내물 띄우기
+        //폼이 전송될때 
+        //만약에 이메일 input에 입력된 값이 빈칸일 경우,
+        //폼의 전송을 막고 안내물 띄우기
+        //만약에 패스워드 input에 입력된 값이 빈칸인 경우,
+        //폼의 전송을 막음, 안내문 띄움 
         $('#form01').submit(function(e){
-            e.preventDefault(); //새로고침이 안된다는 뜻
             if($('#email').val() == ''){
-             alert('이메일을 작성해주세요.');
-            } else{
-                
+                e.preventDefault(); //새로고침이 안된다는 뜻
+                $('#email_notice').show();
+            }
+            if($('#password').val() == ''){
+                e.preventDefault(); //새로고침이 안된다는 뜻
+                $('#password_notice').show();
             }
         });
 
