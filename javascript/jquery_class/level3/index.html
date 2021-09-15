@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>var let const 변수와 변수의 활용법</title>
+</head>
+<body>
+    <script>
+        var 이름 = '상희 모모 엄마 아빠';
+        var 나이 = 20;
+        var 이메일안내창 = $('#email-alert');
+        //console.log(이메일안내창);
+
+        //변수는 선언(변수를 만들겠소) / 할당 / 범위
+        console.log(나이);
+        var 나이 = 20;   //범위가 function 안에 있음 
+        let 나이 = 20;   //재선언이 불가능한 변수를 만들 때 & 실수를 방지하고자 만든 상위버전임 범위 : {} 
+        const 나이 = 20; //재선어닝 불가능한 변수를 만들 때 let과의 차이점은 재할당이 불가능하다.  범위 : {}
+
+    </script>
+</body>
+</html>
