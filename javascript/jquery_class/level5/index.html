@@ -50,13 +50,8 @@
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <a class="btn btn-primary btn-lg" href="#" role="button" id="login">Log In</a>
     </div>
-    <input type="password" id="test-input">
 
-    <form id="form">
-        <input type="text" id="form-id" placeholder="아이디" name="id">
-        <input type="password" id="form-password" placeholder="비밀번호" name="password">
-        <input type="submit" value="로그인" id="submit">
-    </form>
+
 
     <script>
         //애니메이션 만드는 방법
@@ -80,9 +75,35 @@
 
 // \S(특수문자 포함 모든 문자)
 /\S/.test('#'); //ture
-//이메일 정규식 작성방법 dafadsf@afdaf.afdf을 정규식으로 작성한다면?
-/\S@\S.\S/
 
+//ex)이메일 정규식 작성방법 dafadsf@afdaf.afdf을 정규식으로 작성한다면?
+/\S + @\S + \.S/
+
+$('form').on('submit',function(e){
+//만약 지금 이메일 input에 입력된값이 정규식과 비교했을때 false인 경우 폼전송 막기, 안내창 띄우기
+
+var 입력한이메일 = $('#email').val();
+var emailTxt = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+if(/\S + @\S+\.\S/.test(입력한이메일) == flase){ //폼에 입력된 이메일 형식이 아니면
+    e.preventDefault(); //폼전송을 막고 
+}else if( 입력한이메일 ==''){ //만약에 그 입력한 값이 공백이면
+    e.preventDefault(); //폼전송을 막아라
+}
+
+var 입력한패스워드 = $('#password').val();
+if(/[A-Z]+/.test(입력한패스워드) == flase){ //폼에 입력한 패스워드 값이 대문자가 없다면 
+    e.preventDefault(); //폼을 막아라
+}
+
+
+
+
+// //안에있는 내용은 정규표현식 검증에서 사용되는 패턴이 이 안에 위치함
+// i정규표현식에 사용된 패턴이 대소문자를 구분하지않도록 i를 사용함
+// ^표시는 처음시작하는 부분부터 일치한다는 표시임
+//[0-9a-zA-Z]하나의 문자가 []안에 위치한 규칙을 따른다는것으로 숫자와 알파벳 소문자 대문자인 경우를 뜻함
+
+});
 
 
 
