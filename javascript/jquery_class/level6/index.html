@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel UI 제작하기</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <h4 class="my-4 text-center">Showcase</h4>
+    <div style=" overflow:hidden;">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="https://images.unsplash.com/photo-1632943068775-8da4cac874e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt="">
+            </div>
+            <div class="slide-box">
+                <img src="https://images.unsplash.com/photo-1632790929202-a79cd10d9076?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt="">
+            </div>
+            <div class="slide-box">
+                <img src="https://images.unsplash.com/photo-1622322908945-4821e7e5ae36?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt="">
+            </div>
+        </div>
+    </div>
+    <button class="pre-arrow abs">이전</button>
+    <button class="next-arrow abs">다음</button>
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+
+    <div class="my-5"></div>
+
+
+    <script>
+        $('.slide-1').click(function(){
+            $('.slide-container').css('transform','translateX(0vw)');
+        });
+        $('.slide-2').click(function(){
+            $('.slide-container').css('transform','translateX(-100vw)');
+        });
+        $('.slide-3').click(function(){
+            $('.slide-container').css('transform','translateX(-200vw)');
+        });
+    </script>
+  </body>
+</body>
+</html>
