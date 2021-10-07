@@ -1,0 +1,10 @@
+@charset "utf-8";
+/*reset - 초기화로 처음 셋팅 스타일 */
+/* common - 공통적으로 적용되는 스타일*/
+.innerBox{width:1200px; margin:0 auto;}
+
+/* base */
+#section01{}
+#section02{}
+#section03{}
+#section04{}
