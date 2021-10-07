@@ -7,25 +7,55 @@
     <title>스크롤시 변하는 NavBar 만들기</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/nav.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <section id="section01">
         <div class="innerBox">
-            <h1><a href="#"><img src="images/logo_img.png" alt="스타벅스"></a></h1>
-            <nav>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
+            <h1 class="logo"><a href="#"><img src="images/logo_img.png" alt="스타벅스"></a></h1>
+            <nav class="util_nav">
+                 <ul class="flex">
+                     <li><a href="#">Sign In</a></li>
+                     <li><a href="#">My Starbucks</a></li>
+                     <li><a href="#">Customer Service & Ideas</a></li>
+                     <li><a href="#">Find a Store</a></li>
+                 </ul>
+            </nav>
+            <nav class="sub_gnb_nav">
+                <ul class="flex">
+                    <li><a href="#">COFFEE</a></li>
+                    <li><a href="#">MENU</a></li>
+                    <li><a href="#">STORE</a></li>
+                    <li><a href="#">RESPONSLBILITY</a></li>
+                    <li><a href="#">REWARDS</a></li>
                 </ul>
             </nav>
         </div>
     </section>
-    <section id="section02"></section>
+    <section id="section02">
+        <div>
+            <img src="images/banner.png" alt="">
+        </div>
+    </section>
     <section id="section03"></section>
     <section id="section04"></section>
     <section id="section05"></section>
+
+    <script>
+
+        var navBar = $('#section01').outerHeight();
+        var navOffset = $('#section01').offset();
+        var scrollTop = $(window).scrollTop();
+        console.log(scrollTop);
+        console.log(navOffset);
+
+        $(window).scroll(function(){
+            if($(this).scrollTop() > navBar ){
+                $('#section01').addClass('scroll');
+            }else{
+                $('#section01').removeClass('scroll');
+            }
+        });
+    </script>
 </body>
 </html>
