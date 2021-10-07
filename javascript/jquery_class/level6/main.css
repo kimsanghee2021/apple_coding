@@ -1,4 +1,6 @@
-.slide-container{width:300vw; transition:transform 1s; position: relative; }
+.slide-container{width:300vw; transition:transform 1s;  }
 .slide-box{width:100vw; float:left;}
 .slide-box img{width:100%;}
-.abs{position: absolute; top:50px;}
+.abs{position: absolute; top:50%;}
+.pre-arrow{left:50px;}
+.next-arrow{right:50px;}

@@ -12,7 +12,7 @@
 </head>
 <body>
     <h4 class="my-4 text-center">Showcase</h4>
-    <div style=" overflow:hidden;">
+    <div style=" overflow:hidden;position: relative;">
         <div class="slide-container">
             <div class="slide-box">
                 <img src="https://images.unsplash.com/photo-1632943068775-8da4cac874e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt="">
@@ -24,9 +24,10 @@
                 <img src="https://images.unsplash.com/photo-1622322908945-4821e7e5ae36?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt="">
             </div>
         </div>
+        <button class="abs pre-arrow">이전</button>
+        <button class="abs next-arrow">다음</button>
     </div>
-    <button class="pre-arrow abs">이전</button>
-    <button class="next-arrow abs">다음</button>
+
 
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
@@ -36,6 +37,17 @@
 
 
     <script>
+        var 지금보이는사진 = 1;
+        $('.next-arrow').click(function(){
+            if(지금보이는사진 == 1){
+                $('.slide-container').css('transform','translateX(-100vw)');
+                지금보이는사진 = 2;
+            }else if(지금보이는사진 == 2 ){
+                $('.slide-container').css('transform','translateX(-200vw)');
+                지금보이는사진 = 3;
+            }
+        });
+        
         $('.slide-1').click(function(){
             $('.slide-container').css('transform','translateX(0vw)');
         });
