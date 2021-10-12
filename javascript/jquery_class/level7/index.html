@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+    <div class="scrollTop"></div>
     <section id="section01">
         <div class="innerBox">
             <h1 class="logo"><a href="#"><img src="images/logo_img.png" alt="스타벅스"></a></h1>
@@ -46,15 +47,17 @@
         var navBar = $('#section01').outerHeight();
         var navOffset = $('#section01').offset();
         var scrollTop = $(window).scrollTop();
-        console.log(scrollTop);
-        console.log(navOffset);
 
         $(window).scroll(function(){
             if($(this).scrollTop() > navBar ){
                 $('#section01').addClass('scroll');
+                $('.util_nav ul li').fadeOut(300);
+
             }else{
                 $('#section01').removeClass('scroll');
+                $('.util_nav ul li').fadeIn(300);
             }
+            $('.scrollTop').text($(window).scrollTop());
         });
     </script>
 </body>
