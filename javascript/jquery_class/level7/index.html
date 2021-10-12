@@ -42,7 +42,19 @@
         </div>
     </section>
 <!--//section01-->
-    <section id="section03"></section>
+    <section id="section03">
+        <div class="innerBox">
+            <h2>STARBUCKS</h2>
+            <ul class="list flex mt30 fw600">
+                <li class="tab_list fw300 active"><a href="#">products</a></li>
+                <li class="tab_list fw300"><a href="#">information</a></li>
+                <li class="tab_list fw300"><a href="#">shipping</a></li>
+            </ul>
+            <div class="tab_content tab01 show"><p>상품 설명입니다. product</p></div>
+            <div class="tab_content tab02"><p>상품 설명입니다. info</p></div>
+            <div class="tab_content tab02"><p>배송 설명입니다. shipping</p></div>
+        </div>
+    </section>
     <section id="section04"></section>
     <section id="section05"></section>
 
@@ -63,6 +75,22 @@
             }
             $('.scrollTop').text($(window).scrollTop());
         });
+ 
+        // $('.list li a').click(function(e){
+        //     e.preventDefault();
+        //     var parentElement = $(this).parent('li');
+        //     parentElement.addClass('acitve').siblings().removeClass('acitve');
+        //     $('.tab_content').eq(parentElement.index()).show();
+        //     $('.tab_content').eq(parentElement.index()).siblings('.tab_content').hide();
+        // });
+
+            $('.list li a').click(function(e){
+                e.preventDefault();
+                var parentEl = $(this).parent('li');
+                parentEl.addClass('active').siblings().removeClass('active');
+                $('.tab_content').eq(parentEl.index()).show().siblings('.tab_content').hide();
+            });
+
     </script>
 </body>
 </html>
