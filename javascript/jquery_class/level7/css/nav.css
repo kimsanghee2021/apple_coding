@@ -30,7 +30,7 @@
 #section01 .util_nav ul li:last-child:after{width: 0;height: 0;}
 #section01 .util_nav ul li a{font-size: 10px; font-weight: 300;}
 /*스크롤 할 시 */
-#section01.scroll{background: rgba(246,245,239,1); z-index: 99;}
+#section01.scroll{background: rgba(246,245,239,1); z-index: 90;}
 #section01.scroll .logo{width:60px; height: 60px;}
 #section01.scroll .sub_gnb_nav ul li a{font-weight: 600;}
 
