@@ -49,10 +49,12 @@
                 <li class="tab_list fw300 active"><a href="#">products</a></li>
                 <li class="tab_list fw300"><a href="#">information</a></li>
                 <li class="tab_list fw300"><a href="#">shipping</a></li>
+                <li class="tab_list fw300"><a href="#">show</a></li>
             </ul>
-            <div class="tab_content tab01 show"><p>상품 설명입니다. product</p></div>
-            <div class="tab_content tab02"><p>상품 설명입니다. info</p></div>
-            <div class="tab_content tab02"><p>배송 설명입니다. shipping</p></div>
+            <div class="tab_content show"><p>상품 설명입니다. product</p></div>
+            <div class="tab_content"><p>상품 설명입니다. info</p></div>
+            <div class="tab_content"><p>배송 설명입니다. shipping</p></div>
+            <div class="tab_content"><p>쇼핑 설명입니다. showpping</p></div>
         </div>
     </section>
     <section id="section04"></section>
@@ -76,20 +78,12 @@
             $('.scrollTop').text($(window).scrollTop());
         });
  
-        // $('.list li a').click(function(e){
-        //     e.preventDefault();
-        //     var parentElement = $(this).parent('li');
-        //     parentElement.addClass('acitve').siblings().removeClass('acitve');
-        //     $('.tab_content').eq(parentElement.index()).show();
-        //     $('.tab_content').eq(parentElement.index()).siblings('.tab_content').hide();
-        // });
-
-            $('.list li a').click(function(e){
-                e.preventDefault();
-                var parentEl = $(this).parent('li');
-                parentEl.addClass('active').siblings().removeClass('active');
-                $('.tab_content').eq(parentEl.index()).show().siblings('.tab_content').hide();
-            });
+        $('.list li a').click(function(e){
+            var parentEl = $(this).parent('li');
+            e.preventDefault();
+            parentEl.addClass('active').siblings().removeClass('active');
+            $('.tab_content').eq(parentEl.index()).show().siblings('.tab_content').hide();
+        });
 
     </script>
 </body>
