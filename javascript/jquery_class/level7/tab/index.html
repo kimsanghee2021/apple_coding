@@ -50,7 +50,7 @@
     </style>
     <div class="container mt-5">
         <ul class="list">
-            <li class="tab-button" data-id="0">Products</li>
+            <li class="tab-button" data-id='0'>Products</li>
             <li class="tab-button active" data-id="1">Information</li>
             <li class="tab-button" data-id="2">Shipping</li>
         </ul>
@@ -72,10 +72,35 @@
         //두번째 버튼을 누르면 
         //1.두째 버튼에 active라는 클래스를 추가해야함(버튼 누른듯한 하이라이트 해주려고)
         //2.두째 내용에 show라는 클래스를 추가해야함(탭내용 보여주려고) 
-        $('.tab-button').eq(0).click(function(){
-            $(this).addClass('active');
-            $(this).siblings().removeClass('active');
-            $('.tab-content').eq(0).addclass('show').siblings('.tab-content').removeclass('show');
+
+        //첫번째 탭기능
+        // $('.tab-button').eq(0).click(function(){
+        //     $('.tab-button').removeClass('active'); 
+        //     $('.tab-content').removeClass('show'); 
+
+        //     $('.tab-button').eq(0).addClass('active'); 
+        //     $('.tab-content').eq(0).addClass('show'); 
+        // });
+
+        //두번째 탭기능 
+        // for(let i =0; i < $('.tab-button').length; i++){
+        //     $('.tab-button').eq(i).click(function(){
+        //         탭열기()
+        //     });
+        // }
+        //세번째 탭기능
+
+        function 탭열기(target){
+            $('.tab-button').removeClass('active'); 
+            $('.tab-content').removeClass('show'); 
+            $('.tab-button').eq(target).addClass('active'); 
+            $('.tab-content').eq(target).addClass('show'); 
+        }
+        $('.list').click(function(e){
+            //만약에 내가 실제 누른 요소가 버튼0이면 탭 0번쨰 열어주셈
+            if(e.target == document.querySelectorAll('.tab-button')[0]){
+                탭열기(0);
+            }
         });
     </script>
 </body>
