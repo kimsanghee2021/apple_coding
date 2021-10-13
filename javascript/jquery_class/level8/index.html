@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 버블링 / 이벤트 함수들 사용하기</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .block-background{background: rgba(0,0,0,0.5); width:300px; height:300px;}
+        .white-background{background: #fff;width:150px; height:150px;}
+    </style>
+</head>
+<body>
+    <div class="block-background">
+        <div class="white-background">
+          모달창 내용
+        </div>
+    </div>
+    <script>
+        $('.block-background').click(function(e){
+           // $('.white-background').hide(); 
+           // e.target;            //지금 실제 클릭한 요소
+           // e.currentTarget;     //지금 이벤트 리스너가 달린곳(참고로 this라고 쓰여도 같은 의미)
+           // e.preventDefault();  //기본동작을 막을때 쓰는 요소
+           // e.stopPropagation(); //내 상위요소의 이벤트 버블링을 중단할 때 사용
+
+            //ex) 만약에, 지금 실제로 누른게 검은배경일떄만 $('.block-background').hide()해주시오
+            if(e.target ==  e.currentTarget ){ 
+                //여기서 e.currentTarget은 this와 같은 뜻이여서 this는 .block-background이기떄문에 실제 클릭한 요소와 .block-background가 같을시 발생하라는 뜻
+               $('.white-background').hide(); 
+            }
+        });
+    </script>
+</body>
+</html>
