@@ -90,32 +90,40 @@
         // }
         //세번째 탭기능
 
+
+        // $('.list').click(function(e){
+        //     //만약에 내가 실제 누른 요소가 버튼0이면 탭 0번쨰 열어주셈
+        //     if(e.target == document.querySelectorAll('.tab-button')[0]){
+        //         탭열기(0);
+        //     }
+        // });
+        
+            //for문으로 반복문 만들어서 클릭시 일어나게 작업 해보기
+            //리스트 버튼 중 첫번째 버튼을 클릭시 첫번쨰 상품을 노출시키고 
+           //리스트 버튼 중 두번째 버튼을 클릭시 두번째 상품을 노출시켜라
+
+        //    for(let i =0; i < $('.list li').length; i++){
+        //     $('.tab-button').eq(i).click(function(){
+        //         $('.tab-button').removeClass('active');
+        //         $('.tab-content').removeClass('show');
+
+        //         $('.tab-button').eq(i).addClass('active');
+        //         $('.tab-content').eq(i).addClass('show');
+        //     });
+        //    }
+
+        $('.list').data('작명','값');
+        $('.list').data('작명');
+        $('.list').click(function(e){ //자바스크립트 버전
+        탭열기(e.target.dataset.id);
+        });
+
         function 탭열기(target){
             $('.tab-button').removeClass('active'); 
             $('.tab-content').removeClass('show'); 
             $('.tab-button').eq(target).addClass('active'); 
             $('.tab-content').eq(target).addClass('show'); 
         }
-        $('.list').click(function(e){
-            //만약에 내가 실제 누른 요소가 버튼0이면 탭 0번쨰 열어주셈
-            if(e.target == document.querySelectorAll('.tab-button')[0]){
-                탭열기(0);
-            }
-        });
-        
-            //for문으로 반복문 만들어서 클릭시 일어나게 작업 해보기
-            //리스트 버튼 중 첫번째 버튼을 클릭시 첫번쨰 상품을 노출시키고 
-           //리스트 버튼 중 두번째 버튼을 클릭시 두번째 상품을 노출시켜라
-
-           for(let i =0; i < $('.list li').length; i++){
-            $('.tab-button').eq(i).click(function(){
-                $('.tab-button').removeClass('active');
-                $('.tab-content').removeClass('show');
-
-                $('.tab-button').eq(i).addClass('active');
-                $('.tab-content').eq(i).addClass('show');
-            });
-           }
     </script>
 </body>
 </html>
