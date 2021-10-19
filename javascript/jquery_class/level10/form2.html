@@ -50,10 +50,12 @@
                             console.log(sizeArr.pantSize);
             if($('#option1').val() =='셔츠'){
                 $('.size-select').show();
+                $('#option2').remove();
                 $('#option2').append(sizeArr.shirtSize);
 
             } else if($('#option1').val() =='바지'){
                 $('.size-select').show();
+                $('#option2').remove();
                 $('#option2').append(sizeArr.pantSize);
 
             }
