@@ -12,7 +12,7 @@ $(document).ready (function () {
     $('.jq_tabonoff>.jq_cont').children().css('display', 'none');
     $('.jq_tabonoff>.jq_cont div:first-child').css('display', 'block');
     $('.jq_tabonoff>.jq_tab li:first-child').addClass('on');
-    $('.jq_tabonoff').delegate('.jq_tab>li', 'click', function() {
+    $('.jq_tab>li').click(function() {
         var index = $(this).parent().children().index(this);
         $(this).siblings().removeClass();
         $(this).addClass('on');
