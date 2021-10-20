@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<meta name = "format-detection" content = "telephone=no">
+<title> 이중탭을 하나의 스크립트로 처리하기 </title>
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+$(document).ready (function () {
+    //탭(ul) onoff
+    $('.jq_tabonoff>.jq_cont').children().css('display', 'none');
+    $('.jq_tabonoff>.jq_cont div:first-child').css('display', 'block');
+    $('.jq_tabonoff>.jq_tab li:first-child').addClass('on');
+    $('.jq_tabonoff').delegate('.jq_tab>li', 'click', function() {
+        var index = $(this).parent().children().index(this);
+        $(this).siblings().removeClass();
+        $(this).addClass('on');
+        $(this).parent().next('.jq_cont').children().hide().eq(index).show();
+    });
+});
+</script>
+</head>
+<body>
+    <div class="jq_tabonoff comm_tab1">
+        <ul class="jq_tab tab_menu">
+            <li><a href="javascript:;" class="tit">심리학 이론</a></li>
+            <li><a href="javascript:;" class="tit">유래와 역사</a></li>
+            <li><a href="javascript:;" class="tit">박사의 말</a></li>
+        </ul>
+        <div class="jq_cont tab_cont">
+            <!-- //탭1 -->
+            <div class="cont">
+                <p>혈액형 관련 대표적인 심리학 이론들</p><br>
+                <div class="jq_tabonoff comm_tab2">
+                    <ul class="jq_tab tab_menu">
+                        <li><a href="javascript:;" class="tit">1. 확증편향</a></li>
+                        <li><a href="javascript:;" class="tit">2. 바넘효과</a></li>
+                        <li><a href="javascript:;" class="tit">3. 자기실행적 예언</a></li>
+                        <li><a href="javascript:;" class="tit">4. 인지부조화</a></li>
+                    </ul>
+                    <div class="jq_cont tab_cont">
+                        <!-- //탭1-1 -->
+                        <div class="cont">
+                            <strong>1. 확증편향 (confirmation bias)</strong><br><br>
+                            <p>자신의 신념과 일치하는 정보들은 쉽게 믿고 받아들이고, 신념과 일치하지 않는 정보는 무시하거나 덜 찾는 경향<br><br>
+                            예: 소심한 사람에게 혈액형을 물어 A형이 아니라고 하면 금방 잊어버리고,<br>
+                            A형이 맞다고 하면 호들갑을 떨며 "맞지? A형일것 같았어."라고 말하는 것.</p>
+                        </div>
+                        <!-- 탭1-1// -->
+
+                        <!-- //탭1-2 -->
+                        <div class="cont">
+                            <strong>2. 바넘효과 (Barnum effect)</strong><br><br>
+                            대부분의 사람들이 보편적으로 가지고 있는 성격이나 심리적 특징을<br>
+                            자신만의 고유한 특성으로 여기는 경향.<br><br>
+                            예: "당신은 대체로 싸움을 싫어하지만 때로는 강하게 나갈 때도 있다.", "당신은 기본적으로 외향적인 성격이지만 때때로 소심하거나 내향적인 모습을 보이기도 한다"와 같은
+                            당연한 소리를 자신의 성격이라고 믿는 것.
+                        </div>
+                        <!-- 탭1-2// -->
+
+                        <!-- //탭1-3 -->
+                        <div class="cont">
+                            <strong>3. 자기실행적 예언(Self-fulfilling prophecy)</strong><br><br>
+                            자신에 대해 특정한 기대를 갖게 되면, 그러한 기대에 부응하는 쪽으로<br>
+                            변하려고 노력하게 되어, 행동을 그러한 단서에 맞게 바꿔가는 경향.<br><br>
+                            예: 별자리 운세에 나온 "오늘은 좋은 일이 생긴다"라는 말을 보고 기분이 좋아져
+                            실제로도 좋은 하루를 보내게 되는 것.
+                        </div>
+                        <!-- 탭1-3// -->
+
+                        <!-- //탭1-4 -->
+                        <div class="cont">
+                            <strong>4. 인지부조화</strong><br><br>
+                            자신의 기존 신념과 인지가 맞지 않게 되었을 때 인지를 신념에 끼워맞추는<br>일종의 극단적 자기 합리화<br><br>
+                            예: B형같지 않은 B형을 보고 "하긴, 저런 B형도 있다더라."라고 말하는 것.
+                        </div>
+                        <!-- 탭1-4// -->
+                    </div>
+                </div>
+            </div>
+            <!-- 탭1// -->
+            <!-- //탭2 -->
+            <div class="cont">
+                <p>혈액형 성격유형가설의 유래와 역사</p><br>
+                <div class="jq_tabonoff comm_tab2">
+                    <ul class="jq_tab tab_menu">
+                        <li><a href="javascript:;" class="tit">1. 유럽의 우생학</a></li>
+                        <li><a href="javascript:;" class="tit">2. 나치독일 대량학살</a></li>
+                        <li><a href="javascript:;" class="tit">3. 일본의 사이비과학</a></li>
+                    </ul>
+                    <div class="jq_cont tab_cont">
+                        <!-- //탭2-1 -->
+                        <div class="cont">
+                            <strong>1. 제국주의시대 유럽의 우생학</strong><br><br>
+                            유럽에는 A형과 O형이 많고 아시아에는 상대적으로 B형과 AB형이 많은 것에 착안,<br>
+                            A형과 O형은 우월한 종자이고 B형과 AB형은 열등한 종자라는 억지이론을 만들기 시작
+                        </div>
+                        <!-- 탭2-1// -->
+
+                        <!-- //탭2-2 -->
+                        <div class="cont">
+                            <strong>2. 나치독일 대량학살의 뒷받침</strong><br><br>
+                            나치독일에 의해 유대인 등 대학살의 근거로 사용됨
+                        </div>
+                        <!-- 탭2-2// -->
+
+                        <!-- //탭2-3 -->
+                        <div class="cont">
+                            <strong>3. 일본의 사이비과학(pseudoscience)</strong><br><br>
+                            뒷받침되는 증거가 전혀 없어 유럽에서 폐기된 가설을<br>
+                            후루까와 등 일본의 엉터리 과학자가 들여와 나름 살을 붙여서 퍼뜨리기 시작
+                        </div>
+                        <!-- 탭2-3// -->
+                    </div>
+                </div>
+            </div>
+            <!-- 탭2// -->
+            <!-- //탭3 -->
+            <div class="cont">
+                <strong>서울백병원 신경정신과 우종민 박사의 말</strong><br><br>
+                <p>사람의 성격에 대해서는 정신과만큼 관심이 많은 과가 없겠지요.<br>
+                    그렇지만 정신과 의사들은 혈액형과 성격에 대해서 연구한 적이 거의 없습니다.<br>
+                    그 이유는 애당초 연구를 시작해야 될 필요성이나 과학적인 근거가 없기 때문에<br>
+                    연구를 안 한 것이지요.
+                </p>
+            </div>
+            <!-- 탭3// -->
+        </div>
+    </div>
+</body>
+</html>
