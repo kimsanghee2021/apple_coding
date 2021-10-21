@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<title>공인회계사 합격가이드</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes">
+<link href="css/default.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/suhum_new.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <?php include("inc/header.html");?>
+	<div id="container" class="jq_tabonoff">
+		<ul class="jq_tab tab_btn mt50 pt10 pb10">
+			<li class="tabOn"><a href="#"><strong>1.회계사란?</strong><br>주요업무,진로, 전망 및 연봉</a></li>
+			<li><a href="#"><strong>2.회계사 시험 최신정보</strong><br>시험제도, 응시자격, 시험일정 등</a></li>
+			<li><a href="#"><strong>3.미래 합격시스템</strong><br>커리큘럼 과목별 교수님, 학습TIP!</a></li>
+			<li><a href="#"><strong>4.과목별 공부방법 회계사 합격수기</strong><br>합격생의 공부방법</a></li>
+		</ul>
+		<ul  class="tabCnt jq_cont">
+			<li class="tabCntList tabCnt01" style="display: block;"><?include "/suhum_01.html";?></li>
+			<li class="tabCntList tabCnt02"><?include "/suhum_02.html";?></li>
+			<li class="tabCntList tabCnt03"><?include "/suhum_03.html";?></li>
+			<li class="tabCntList tabCnt04"><?include "/suhum_04.html";?></li>
+		</ul>
+		<div style="height: 1000px;"></div>
+</div>
+<script>
+/** 상위 탭 **/
+// $('.tab_btn li a').click(function(){
+// 	var tabBtn = $(this).parent('li');
+// 	tabBtn.addClass('tabOn').siblings('li').removeClass('tabOn');
+// 	$('.tabCntList').css('display','none');
+// 	$('.tabCntList').eq(tabBtn.index()).show();
+
+// });
+
+/** 하위 탭 **/
+// $('.sm_tab li a').click(function(){
+// 	var smTabBtn = $(this).parent('li');
+// 	smTabBtn.addClass('tabOn').siblings('li').removeClass('tabOn');
+// 	$('.sm_cont').css('display','none'); 
+// 	$('.sm_cont').eq(smTabBtn.index()).show();
+// 	console.log(smTabBtn.index());
+// });
+  //탭(ul) onoff
+    $('.jq_tabonoff>.jq_cont').children().css('display', 'none');
+    $('.jq_tabonoff>.jq_cont div:first-child').css('display', 'block');
+    $('.jq_tabonoff>.jq_tab li:first-child').addClass('on');
+    $('.jq_tab>li').click(function() {
+        var index = $(this).parent().children().index(this);
+        $(this).siblings().removeClass();
+        $(this).addClass('on');
+        $(this).parent().next('.jq_cont').children().hide().eq(index).show();
+    });
+/* 헤더 스크롤 */
+$(window).scroll(function(){
+	var header = $('#header').outerHeight();
+		console.log($(window).scrollTop());
+	if($(window).scrollTop() > header){
+		$('.tab_btn').addClass('fixed');
+	}else{
+		$('.tab_btn').removeClass('fixed');
+	}
+
+});
+
+</script>
+</body>
+</html>
