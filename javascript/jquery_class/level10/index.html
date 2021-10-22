@@ -16,7 +16,7 @@
 <body>
 
     <form action="" class="container my-5">
-        <div class="form-group">
+        <div class="form-group" style="margin-top:40px;" >
             <p>상품선택</p>
             <select name="" id="option1" class="form-control">
                 <option value="모자">모자</option>
@@ -30,6 +30,16 @@
                     <option value="100">100</option>
                     <option value="105">105</option>
                 </select>
+            </div>
+            <p style="margin-top:40px;" >오늘의 메뉴</p>
+            <select name="" id="option1-1" class="form-control" >
+                <option value="아침">아침</option>
+                <option value="점심">점심</option>
+                <option value="저녁">저녁</option>
+            </select>
+            <div class="food-select">
+                <p style="margin-top:15px;">음식 선택</p>
+                <select name="" id="option2-1" class="form-control"></select>
             </div>
         </div>
     </form>
@@ -47,7 +57,22 @@
                 $('.size-select').hide(); 
             }
         });
-
+        var foodArr = {moringArr:['<option value="초밥">초밥</option>','<option value="통밀빵">통밀빵</option>','<option value="그릭요거트">그릭요거트</option>'],
+                            lunchArr:['<option value="칼국수">칼국수</option>','<option value="피자">피자</option>','<option value="떡볶이">떡볶이</option>'],
+                            dinnerArr:['<option value="계란">계란</option>','<option value="사과">사과</option>','<option value="카레">카레</option>']};
+                            $('#option2-1').append(foodArr.moringArr);
+        $('#option1-1').change(function(){
+            if($('#option1-1').val() == '아침'){
+                $('#option2-1').empty();
+                $('#option2-1').append(foodArr.moringArr);
+            }else if($('#option1-1').val() == '점심'){
+                $('#option2-1').empty();
+                $('#option2-1').append(foodArr.lunchArr);
+            }else if($('#option1-1').val() == '저녁'){
+                $('#option2-1').empty();
+                $('#option2-1').append(foodArr.dinnerArr);
+            }
+        });
 
     </script>
 </body>
