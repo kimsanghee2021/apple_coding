@@ -4,12 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <title></title>
+    <title> Array 자료형, for 반복문 실력향상 과제 </title>
 </head>
 <body>
-    
+    <!-- 출석부에 내가 원하는 이름이 있는지 없는지 알려주는 함수 -->
+    <script>
+        var 출석부 = ['흥민','영희','철수','상희','재석'];
+
+        function 이름찾기(target){
+           for(i=0; i<출석부.length; i++){
+                if(출석부[i] == target){
+                   document.write(`<br> ${출석부[i]} 이름있습니다.<br>`);
+                }
+           }
+        }
+
+        이름찾기('상희');
+
+        /* 구구단  */
+        // for(i=1; i<10; i++){
+        //     document.write(i*2+'<br>');
+        // }
+
+        for(z=2; z<10; z++){
+            document.write('<br><br>');
+            for(i=1; i<10; i++){
+                document.write(i*z);
+            }
+        }
+        document.write('<br><br><br><br>');
+
+
+        var maxLength = 5;
+        function myFunction(){
+            // 상단 삼각형
+            for(var i=0; i<=maxLength; i++){
+                for(var j=maxLength; j > i; j--)  {
+                    // space
+                    document.write('&nbsp');
+                }
+                for(var j=0; j <= i; j++)  {
+                    document.write('*');
+                }
+                for(var j=1; j <= i; j++)  {
+                    document.write('*');
+                }
+                document.write("<br>");
+            }
+        }
+        myFunction();
+
+
+    </script>
 </body>
 </html>
