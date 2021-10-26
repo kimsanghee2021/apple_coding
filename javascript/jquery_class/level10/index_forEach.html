@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select 상품</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <style>
+        .size-select{display: block;}
+        .mt-4{margin-top:4px;}
+        h1{text-align:center;}
+    </style>
+</head>
+<body>
+    <h1>셀렉트시 변하는 interactive forEach문 만들어보기</h1>
+    <form action="" class="container my-5">
+        <div class="form-group" style="margin-top:40px;" >
+            <p>상품선택</p>
+            <select name="" id="option1" class="form-control">
+                <option value="모자">모자</option>
+                <option value="셔츠">셔츠</option>
+                <option value="바지">바지</option>
+            </select>
+            <div class="size-select">
+                <p class="mt-4">사이즈 선택</p>
+                <select name="" id="option2" class="form-control">
+                    <!-- <option value="90">90</option>
+                    <option value="95">95</option>
+                    <option value="100">100</option>
+                    <option value="105">105</option> -->
+                </select>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        $('#option1').change(function(){
+            var size = [28,29,30,31,32,34];
+            if($('#option1').val() == '바지'){
+
+                size.forEach(function(i){ // array는 forEach()로 반복시킬 수 있다.
+                    //6번 반복해줌
+                    //i 값은 사이즈안에 있는 하나하나의 데이터
+                    var optionCont = `<option value="${i}">${i}</option>`;
+                    $('#option2').append(optionCont);
+                }); 
+               
+            }
+
+        });
+
+    </script>
+</body>
+</html>
