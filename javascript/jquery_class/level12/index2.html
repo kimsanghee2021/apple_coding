@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쇼핑몰 상품 진열 기능 만들기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div class="card-group container">
+    <div class="card" id="card01">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+        <h5 class="title"></h5>
+        <p>가격 : <span class="price"></span> </p>
+        <button class="btn btn-danger">주문하기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+        <h5 class="title"></h5>
+        <p>가격 : <span class="price"></span> </p>
+        <button class="btn btn-danger">주문하기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+        <h5 class="title"></h5>
+        <p>가격 : <span class="price"></span> </p>
+        <button class="btn btn-danger">주문하기</button>
+        </div>
+    </div>
+</div>
+<script>
+var products = [
+        { 
+            id : 0, 
+            price : 70000, 
+            title : 'Blossom Dress' 
+        },
+        {
+            id : 1, 
+            price : 50000, 
+            title : 'Springfield Shirt' 
+        },
+        {
+            id : 2, 
+            price : 60000,
+            title : 'Black Monastery' 
+        }
+    ]
+
+        for(i =0; i <products.length; i++ ){
+            $('.title').eq(i).html(products[i].title);
+            $('.price').eq(i).append(products[i].price);
+        }
+</script>
+</body>
+</html>
