@@ -14,28 +14,33 @@
     <div class="card" id="card01">
         <img src="https://via.placeholder.com/600">
         <div class="card-body">
-        <h5 class="title"></h5>
-        <p>가격 : <span class="price"></span> </p>
-        <button class="btn btn-danger">주문하기</button>
+            <h5 class="title"></h5>
+            <p>가격 : <span class="price"></span> </p>
+            <button class="btn btn-danger">주문하기</button>
         </div>
     </div>
     <div class="card">
         <img src="https://via.placeholder.com/600">
         <div class="card-body">
-        <h5 class="title"></h5>
-        <p>가격 : <span class="price"></span> </p>
-        <button class="btn btn-danger">주문하기</button>
+            <h5 class="title"></h5>
+            <p>가격 : <span class="price"></span> </p>
+            <button class="btn btn-danger">주문하기</button>
         </div>
     </div>
     <div class="card">
         <img src="https://via.placeholder.com/600">
         <div class="card-body">
-        <h5 class="title"></h5>
-        <p>가격 : <span class="price"></span> </p>
-        <button class="btn btn-danger">주문하기</button>
+            <h5 class="title"></h5>
+            <p>가격 : <span class="price"></span> </p>
+            <button class="btn btn-danger">주문하기</button>
         </div>
     </div>
 </div>
+<div class="container my-4">
+    <button class="btn btn-danger" id="price_sort">가격순정렬</button>
+    <button class="btn btn-danger" id="price_filter">5만원이하 상품 보기</button>
+</div>
+
 <script>
 var products = [
         { 
@@ -54,11 +59,55 @@ var products = [
             title : 'Black Monastery' 
         }
     ]
+    //< sort()함수 동작원리 >
+    //1.a,b는 array 안의 데이터들 
+    //2.a,b return 하면 a 오른쪽 b왼쪽
+    //양수로 숫자 정렬하고
 
+    var 어레이 = [7,8,5,6,2,'김상희',40,'문수아',-4];
+    어레이.sort(); //문자 정렬
+    어레이.sort(function(a,b){
+        return a-b;    //[-4, 2, 5, 6, 7, 8, 40, '김상희', '문수아']
+    }); //숫자정렬() 양수
+    
+    어레이.sort(function(a,b){
+        return b-a;   // [40, 8, 7, 6, 5, 2, -4, '김상희', '문수아']
+    }); //숫자정렬() 음수
+
+    var 문자 = ['a','b','c','e','x','y'];
+    문자.sort();//문자열 내림차순
+    문자.reverse(); //문자열 오른차순
+
+    var 필터어레이 = [7,8,2,6,9,10,51];
+    var new필터어레이 =  필터어레이.filter(function(a){
+        return a < 4;
+    });
+    //console.log(new필터어레이);
+
+    //필터함수는 기존 array 자료를 변형하지 않는다. 그래서 변수 안에다가 넣어서 작업해야한다.
+    $('#price_filter').click(function(){
+        var productsFilter = products.filter(function(a){
+            return a.price <= 50000;
+        });
+        console.log(productsFilter);
+        $('.title').html(productsFilter);
+        $('.price').append(productsFilter.price);
+    });
+
+
+    $('#price_sort').click(function(){  
+        products.sort(function(a,b){
+            return a.price -b.price;
+        });
         for(i =0; i <products.length; i++ ){
             $('.title').eq(i).html(products[i].title);
             $('.price').eq(i).append(products[i].price);
         }
+    });
+
+
+
+
 </script>
 </body>
 </html>
