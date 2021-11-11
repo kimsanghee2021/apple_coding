@@ -13,9 +13,7 @@
 </head>
 <body>
     <div class="block-background">
-        <div class="white-background">
-          모달창 내용
-        </div>
+        <div class="white-background">모달창 내용</div>
     </div>
     <script>
         $('.block-background').click(function(e){
@@ -25,10 +23,11 @@
            // e.preventDefault();  //기본동작을 막을때 쓰는 요소
            // e.stopPropagation(); //내 상위요소의 이벤트 버블링을 중단할 때 사용
 
-            //ex) 만약에, 지금 실제로 누른게 검은배경일떄만 $('.block-background').hide()해주시오
+            //ex) 만약에, 지금 실제로 누른게 검은배경일떄만 $('.block-background').hide() 해주시오
             if(e.target ==  e.currentTarget ){ 
                 //여기서 e.currentTarget은 this와 같은 뜻이여서 this는 .block-background이기떄문에 실제 클릭한 요소와 .block-background가 같을시 발생하라는 뜻
-               $('.white-background').hide(); 
+                
+                $('.white-background').hide(); 
             }
         });
     </script>
