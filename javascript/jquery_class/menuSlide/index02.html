@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>각각의 메뉴 높이에 맞춰 내려오게하기</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<style>
+* {margin:0; padding:0;}
+ul li {list-style:none;}
+.clearfix:after{content:'';display:block; clear:both;}
+body {background:green; overflow-y:scroll;}
+header {	
+	margin-top:20px;
+	background:linear-gradient(white 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5) );
+	height:50px; 
+	overflow:hidden;
+}
+
+nav {width:960px; margin:0 auto;}
+nav > ul > li {float:left; line-height:50px; margin-right:40px; }
+nav > ul > li ul{ width:100%; display: none; position: absolute;}
+nav > ul > li ul li{white-space:nowrap;}
+</style>
+<body>
+    <header>
+        <nav>
+                <ul class="clearfix">
+                    <li>1st menu
+                            <ul>
+                                <li>2nd menu</li>
+                            </ul>
+                    </li>
+                    <li>2nd menu
+                            <ul>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                            </ul>
+                    </li>
+                    <li>3rd menu
+                            <ul>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                            </ul>
+                    </li>
+                    <li>4th menu
+                            <ul>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                                <li>2nd menu</li>
+                            </ul>
+                    </li>				
+    
+                </ul>
+        </nav>
+    </header>
+    <script>
+        //첫번째 메뉴에 마우스가 들어오면
+        //마 우스가 들어온 그 메뉴의 서브메뉴의 높이를 변수명 subHeight로 저장하고 
+        //기존 header 높이에 더한 값을 header의 높이로 0.3s 걸처 애니메트가 될수 있도록 작업하기 
+        var $firstMenu = $('nav > ul > li');
+        var $header = $('header');
+        var $headerHeight = $header.outerHeight();
+
+        $firstMenu.mouseenter(function(){
+            var $current = $(this);
+            var $subHeight = $current.find('ul').outerHeight();
+            $header.stop().animate({'height': $headerHeight + $subHeight+'px'},300);
+            //setTimeout(할일, 시간);
+            setTimeout(function(){
+                $current.find('ul').show();
+            },200);
+        }).mouseleave(function(){
+            $header.stop().animate({'height': $headerHeight + 'px'},300);
+            $current.find('ul').hide();
+        });
+    </script>
+</body>
+</html>
