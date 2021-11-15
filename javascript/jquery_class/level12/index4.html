@@ -39,7 +39,7 @@
     <div class="container my-4">
         <button class="btn btn-danger" id="sortText">가나다순 정렬</button>
         <button class="btn btn-danger" id="sortPrice">가격순 정렬</button>
-        <button class="btn btn-danger" id="">5만원 이하 노출</button>
+        <button class="btn btn-danger" id="priceTerms">6만원 이하 노출</button>
     </div>
 
     <script>
@@ -50,15 +50,49 @@
         ]
 
         //반복문
+    function forProduct(){
         for(var i = 0; i < products.length; i++ ){
             $('.title').eq(i).html(products[i].title);
             $('.price').eq(i).html(products[i].price);
         }
+    }
+    forProduct();
 
+        //가나다순 정렬
+        $('#sortText').click(function(){
+            products.sort(function(a,b){
+            if(a.title < b.title == 'true'){
+                    return -1
+            }else{
+                    return 1
+                }
+            });
+            for(var i = 0; i < products.length; i++ ){
+                $('.title').eq(i).html(products[i].title);
+                $('.price').eq(i).html(products[i].price);
+            }
+        });
+
+        //가격순 정렬
         $('#sortPrice').click(function(){
             products.sort(function(a,b){
                 return a.price-b.price;
             });
+            forProduct();
+        });
+
+        //5만원 이하 가격 필터 버튼
+        $('#priceTerms').click(function(){
+            var newPriceTerms = products.filter(function(a){
+                return a.price <= 60000;
+            });
+            console.log(newPriceTerms);
+            var template = '<div>' + newPriceTerms + '</div>';
+            console.log(template);
+            for(var i =0; i < newPriceTerms.length; i++){
+                $('.card').append(template);
+            }
+           
             
         });
 
