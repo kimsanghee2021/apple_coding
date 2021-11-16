@@ -38,6 +38,7 @@
     </div>
     <div class="container my-4">
         <button class="btn btn-danger" id="sortText">가나다순 정렬</button>
+        <button class="btn btn-danger" id="sortText2">가나다역순 정렬</button>
         <button class="btn btn-danger" id="sortPrice">가격순 정렬</button>
         <button class="btn btn-danger" id="priceTerms">6만원 이하 노출</button>
     </div>
@@ -50,27 +51,36 @@
         ]
 
         //반복문
-    function forProduct(){
-        for(var i = 0; i < products.length; i++ ){
-            $('.title').eq(i).html(products[i].title);
-            $('.price').eq(i).html(products[i].price);
+        function forProduct(){
+            for(var i = 0; i < products.length; i++ ){
+                $('.title').eq(i).html(products[i].title);
+                $('.price').eq(i).html(products[i].price);
+            }
         }
-    }
-    forProduct();
+        forProduct();
 
         //가나다순 정렬
         $('#sortText').click(function(){
             products.sort(function(a,b){
-            if(a.title < b.title == 'true'){
+            if(a.title < b.title == true ){
                     return -1
             }else{
                     return 1
                 }
             });
-            for(var i = 0; i < products.length; i++ ){
-                $('.title').eq(i).html(products[i].title);
-                $('.price').eq(i).html(products[i].price);
-            }
+            forProduct();
+        });
+
+        //가나다 역순 정렬
+        $('#sortText2').click(function(){
+            products.sort(function(a,b){
+                if(a.title < b.title == false){
+                    return -1;
+                } else{
+                    return 1;
+                }
+            });
+            forProduct();
         });
 
         //가격순 정렬
@@ -81,27 +91,31 @@
             forProduct();
         });
 
-        //5만원 이하 가격 필터 버튼
+        //6만원 이하 가격 필터 버튼
         $('#priceTerms').click(function(){
-            var newPriceTerms = products.filter(function(a){
-                return a.price <= 60000;
-            });
-            console.log(newPriceTerms);
-            var template = '<div>' + newPriceTerms + '</div>';
-            console.log(template);
-            for(var i =0; i < newPriceTerms.length; i++){
-                $('.card').append(template);
-            }
-           
-            
+            var newProducts = products.filter(function(a){
+                return  a.price <= 60000;
+                });
+                forProduct();
+
+            console.log(newProducts);
+
+            newProducts.forEach(function(a){
+                var template = `   
+                    <div class="card">
+                        <img src="https://via.placeholder.com/600">
+                        <div class="card-body">
+                            <h5 class="title">${a.title}</h5>
+                            <p>가격 : <span class="price">${a.price}</span></p>
+                            <button class="btn btn-danger">주문하기</button>
+                        </div>
+                    </div
+                        `;
+            $('.card-group').append(template);
+            }); 
         });
 
-
-
-
-
-
-
+        //sort 사용방법
         var 어레이 = [7,5,8,6,2,30];
         console.log( 어레이.sort()); // [2, 30, 5, 6, 7, 8] - 숫자 정렬아님 문자정렬임
 
@@ -118,18 +132,12 @@
 
 
 
-
-
-
-
-
-
-
     // $('.title').eq(0).html(products[0].title);
     // $('.title').eq(1).html(products[1].title);
     // $('.title').eq(2).html(products[2].title);
     // document.querySelector('.title').innerHTML = products[0].title;
     // document.querySelector('.price').innerHTML = products[0].price; 
+
 
     </script>
 </body>
