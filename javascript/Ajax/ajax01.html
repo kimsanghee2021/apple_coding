@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <h4 id="hello">임시글씨</h4>
+    <button class="btn btn-danger my-4" id="button">버튼</button>
+
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-mony"></p>
+                <p class="card-model"></p>
+                <a href="#" class="btn btn-primary">상품 보여주기</a>
+            </div>
+        </div>
+    </div>
+    
+<!-- <p>
+        서버 : 접속자가 요청을 하면 데이터를 갖다줌<br>
+        요청 : get / host<br>
+        GET :  URL을 입력해서 요청함 (읽기)<br>
+        HOST : 로그인 버튼을 클릭시 아이디와 비밀번호 노출 안되게 하는법 / 숨겨서 뭔가 정보를 전달하거나 요청함( 쓰기 )<br>
+        AJAX : 서버에다가 요청을 할 수 있게 도와줌 (새로고침 없이 요청할 수 있음)<br>
+    </p> -->
+    <script>
+
+        //아작스 요청법
+        $.ajax({
+            url : 'https://codingapple1.github.io/hello.txt',
+            type : 'GET'
+        }).done(function(데이터){
+            console.log(데이터);
+        });
+        
+        $('#button').click(function(){
+            $.ajax({
+                url : 'https://codingapple1.github.io/hello.txt',
+                type : 'GET'
+                }).done(function(데이터){
+                    $('#hello').html(데이터);
+            }).fail(function(){
+                //실패 했을시 갈 경로 
+            }).always(function(){
+                //실패하거나 안하거나 가야할 경로
+            });
+        });
+
+        $('.btn-primary').click(function(){
+            $.ajax({
+                url : 'https://codingapple1.github.io/data.json',
+                type : 'GET'
+            }).done(function(배열){
+                console.log(배열);
+                $('.card-title').html(배열.brand);
+                $('.card-img-top').attr('src',배열.img);
+                $('.card-mony').html(배열.price);
+                $('.card-model').html(배열.model);
+            });
+
+        });
+
+    </script>
+</body>
+</html>
