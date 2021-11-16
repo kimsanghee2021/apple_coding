@@ -8,106 +8,106 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .title{font-weight: 600;}
+    </style>
 </head>
 <body>
-<div class="card-group container">
-    <div class="card" id="card01">
-        <img src="https://via.placeholder.com/600">
-        <div class="card-body">
-            <h5 class="title"></h5>
-            <p>가격 : <span class="price"></span> </p>
-            <button class="btn btn-danger">주문하기</button>
+    <div class="card-group container">
+        <div class="card">
+            <img src="https://via.placeholder.com/600">
+            <div class="card-body">
+                <h5 class="title"></h5>
+                <p>가격 : <span class="price"></span> </p>
+                <button class="btn btn-danger">주문하기</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/600">
+            <div class="card-body">
+                <h5 class="title"></h5>
+                <p>가격 : <span class="price"></span> </p>
+                <button class="btn btn-danger">주문하기</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/600">
+            <div class="card-body">
+                <h5 class="title"></h5>
+                <p>가격 : <span class="price"></span> </p>
+                <button class="btn btn-danger">주문하기</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/600">
+            <div class="card-body">
+                <h5 class="title"></h5>
+                <p>가격 : <span class="price"></span> </p>
+                <button class="btn btn-danger">주문하기</button>
+            </div>
         </div>
     </div>
-    <div class="card">
-        <img src="https://via.placeholder.com/600">
-        <div class="card-body">
-            <h5 class="title"></h5>
-            <p>가격 : <span class="price"></span> </p>
-            <button class="btn btn-danger">주문하기</button>
-        </div>
+    <div class="container my-4">
+        <button class="btn btn-danger" id="sortTxt">가나다순 정렬</button>
+        <button class="btn btn-danger" id="sortTxt2">다나가 역순정렬</button>
+        <button class="btn btn-danger" id="sortMony">금액이 가장 적은순</button>
+        <input type="number" value="sortNum" min='20000' step="10000" id="sortNum"> 
+        ~
+        <input type="number" value="sortNum" min='50000' max="70000" step="10000" id="sortNum">
+        <input type="submit" value="검색하기">
     </div>
-    <div class="card">
-        <img src="https://via.placeholder.com/600">
-        <div class="card-body">
-            <h5 class="title"></h5>
-            <p>가격 : <span class="price"></span> </p>
-            <button class="btn btn-danger">주문하기</button>
-        </div>
-    </div>
-</div>
-<div class="container my-4">
-    <button class="btn btn-danger" id="price_sort">가격순정렬</button>
-    <button class="btn btn-danger" id="price_filter">5만원이하 상품 보기</button>
-</div>
+    <script>
+        var products = [
+            { id : 0, price : 70000, title : 'A검정부츠' },
+            { id : 1, price : 50000, title : 'B코트' },
+            { id : 2, price : 60000, title : 'C야상' },
+            { id : 3, price : 20000, title : 'D반바지' },
+            { id : 4, price : 30000, title : 'E흰색 티' },
+        ]
 
-<script>
-var products = [
-        { 
-            id : 0, 
-            price : 70000, 
-            title : 'Blossom Dress' 
-        },
-        {
-            id : 1, 
-            price : 50000, 
-            title : 'Springfield Shirt' 
-        },
-        {
-            id : 2, 
-            price : 60000,
-            title : 'Black Monastery' 
-        }
-    ]
-    //< sort()함수 동작원리 >
-    //1.a,b는 array 안의 데이터들 
-    //2.a,b return 하면 a 오른쪽 b왼쪽
-    //양수로 숫자 정렬하고
+        //변수값 products 오브젝트 값을 각각 넣어보도록 하자 
+        function sortProducts(){
+            for(var i =0; i < products.length; i++ ){
+                $('.title').eq(i).html(products[i].title);
+                $('.price').eq(i).html(products[i].price);
+            }
+        };
+        sortProducts();
 
-    var 어레이 = [7,8,5,6,2,'김상희',40,'문수아',-4];
-    어레이.sort(); //문자 정렬
-    어레이.sort(function(a,b){
-        return a-b;    //[-4, 2, 5, 6, 7, 8, 40, '김상희', '문수아']
-    }); //숫자정렬() 양수
-    
-    어레이.sort(function(a,b){
-        return b-a;   // [40, 8, 7, 6, 5, 2, -4, '김상희', '문수아']
-    }); //숫자정렬() 음수
-
-    var 문자 = ['a','b','c','e','x','y'];
-    문자.sort();//문자열 내림차순
-    문자.reverse(); //문자열 오른차순
-
-    var 필터어레이 = [7,8,2,6,9,10,51];
-    var new필터어레이 =  필터어레이.filter(function(a){
-        return a < 4;
-    });
-    //console.log(new필터어레이);
-
-    //필터함수는 기존 array 자료를 변형하지 않는다. 그래서 변수 안에다가 넣어서 작업해야한다.
-    $('#price_filter').click(function(){
-        var productsFilter = products.filter(function(a){
-            return a.price <= 50000;
+        //가나다순 정렬
+        $('#sortTxt').click(function(){
+            products.sort(function(a,b){
+                if(a.title < b.title ==true){
+                    return -1;
+                } else{
+                    return 1;
+                }
+            });
+            sortProducts();
         });
-        console.log(productsFilter);
-        $('.title').html(productsFilter);
-        $('.price').append(productsFilter.price);
-    });
 
-
-    $('#price_sort').click(function(){  
-        products.sort(function(a,b){
-            return a.price -b.price;
+        //다나가 역순 정렬
+        $('#sortTxt2').click(function(){
+            products.sort(function(a,b){
+                if(a.title < b.title == false){
+                    return -1;
+                } else{
+                    return 1;
+                }
+            });
+            sortProducts();
         });
-        for(i =0; i <products.length; i++ ){
-            $('.title').eq(i).html(products[i].title);
-            $('.price').eq(i).append(products[i].price);
-        }
-    });
 
+        //금액이 가장 적은 순 
+        $('#sortMony').click(function(){
+            products.sort(function(a,b){
+                return a.price - b.price;
+            });
+            sortProducts();
+        });
 
-
-
-</script>
+        //금액이 2만원부터 4만원 사이의 금액만 노출
+      
+    </script>
 </body>
 </html>
