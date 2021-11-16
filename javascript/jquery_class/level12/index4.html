@@ -94,11 +94,13 @@
         //6만원 이하 가격 필터 버튼
         $('#priceTerms').click(function(){
             var newProducts = products.filter(function(a){
-                return  a.price <= 60000;
-                });
+                return a.price <= 60000;
+            });
                 forProduct();
 
             console.log(newProducts);
+
+            $(".card").hide();
 
             newProducts.forEach(function(a){
                 var template = `   
@@ -109,26 +111,11 @@
                             <p>가격 : <span class="price">${a.price}</span></p>
                             <button class="btn btn-danger">주문하기</button>
                         </div>
-                    </div
+                    </div>
                         `;
             $('.card-group').append(template);
             }); 
         });
-
-        //sort 사용방법
-        var 어레이 = [7,5,8,6,2,30];
-        console.log( 어레이.sort()); // [2, 30, 5, 6, 7, 8] - 숫자 정렬아님 문자정렬임
-
-        어레이.sort(function(a,b){ 
-            return a-b; //오름차순
-            return b-a; //내림차순
-        });
-        console.log(어레이);  //[2, 5, 6, 7, 8, 30] - 숫자 정렬
-
-        var 문자어레이 = ['ㄴ','ㅁ','ㅂ','ㅅ','ㄹ','ㄷ','ㄱ'];
-        document.write( '문자열 오름차순 : '+문자어레이.sort()+'<br>'); //문자열 오름차순
-        문자어레이.sort().reverse(); 
-        document.write('문자열 내림차순 : ' + 문자어레이+'<br>'); //문자열 내림차순
 
 
 
