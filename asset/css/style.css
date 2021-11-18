@@ -63,7 +63,7 @@ img {
 #header .submenu_bg {
   background: #fff;
   z-index: 9;
-  display: block;
+  display: none;
   position: absolute;
   border-top: 1px solid #eee;
   width: 100%;
@@ -415,6 +415,9 @@ img {
 .subBnrTxt .innerBox > li {
   display: inline-block;
 }
+.subBnrTxt .innerBox > li.on > a {
+  color: #b60005;
+}
 .subBnrTxt .innerBox > li > a {
   display: block;
   width: 100%;
@@ -437,6 +440,18 @@ img {
   transition: all 0.3s;
   background: #b60005;
 }
+.subBnrTxt .innerBox > li.on > a::after {
+  width: 100%;
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  transition: all 0.3s;
+  background: #b60005;
+}
+
 .subBnrTxt .innerBox > li > a:hover {
   color: #b60005;
 }
