@@ -1,0 +1,24 @@
+
+/* layout */
+.innerBox{width:1440px; margin:0 auto; position: relative;}
+img{width: 100%;}
+.clearfix {clear: both; content: ''; display: block;}
+/* header */
+#header{padding:30px 0 20px; border-bottom:1px solid #cccccc;}
+#header .innerBox{display: flex; justify-content: space-between; align-content: center;}
+#header .logo{width:200px;}
+#header nav {width:784px; margin-top: 10px;}
+#header nav .menu{display: flex; justify-content: space-between;}
+#header nav .menu > li{position: relative; transition: all 0.3s;}
+#header nav .menu > li{}
+#header nav .menu > li:hover:after{content: ''; width:120px;  left:50%; transform: translateX(-50%);bottom:-25px; height:3px; background: #b60005; position: absolute; }
+#header nav .menu > li > a{display: block;  font-size:20px; color:#171717; font-weight: 600;}
+#header nav .menu > li > .submenu{z-index: 5; position: absolute; top:80px; left:0; width: 100%; height:80px; display: none; background: red;}
+#header nav .menu li .submenu li{width:100%;}
+#header nav .menu li .submenu li a{font-size: 16px; font-weight: 300; display: block;}
+
+/* main */
+
+/* banner */
+#banner{display: flex; margin-top:100px;}
+#banner .banTxt{margin-top:500px;}
