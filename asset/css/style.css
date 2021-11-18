@@ -41,43 +41,84 @@ img {
   display: block;
   width: 184px;
   padding: 26px 0;
-  background-color: blue;
   text-align: center;
   font-size: 20px;
   color: #171717;
+  position: relative;
+}
+#header .menu > ul > li > a:after {
+  content: "";
+  width: 0%;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+  height: 3px;
+  background: #b60005;
+}
+#header .menu > ul > li > a:hover:after {
+  width: 100%;
 }
 #header .submenu_bg {
   background: #fff;
   z-index: 9;
   display: block;
   position: absolute;
-  width: 100%;
   border-top: 1px solid #eee;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
-
+#header > .submenu_bg > .innerBox {
+  display: flex;
+  width: 1398px;
+  padding: 20px 0;
+  justify-content: flex-end;
+}
+#header > .submenu_bg > .innerBox > .submenu {
+  width: 184px;
+  text-align: center;
+}
+#header > .submenu_bg > .innerBox > .submenu > li > a {
+  padding: 5px 0;
+  display: block;
+  font-size: 15px;
+  color: #666;
+  transition: all 0.3s;
+}
+#header > .submenu_bg > .innerBox > .submenu > li > a:hover {
+  color: #b60005;
+}
 #header .hamMenu {
-  width: 18px;
-  height: 3px;
-  background: #000;
-  position: relative;
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  top: 30px;
+  right: -20px;
+  cursor: pointer;
 }
-#header .hamMenu:after {
+#header .hamMenu > span {
+  width: 30px;
+  height: 3px;
+  display: block;
+  background: #000;
+}
+#header .hamMenu > span:after {
   content: "";
-  width: 18px;
+  width: 30px;
   height: 3px;
   position: absolute;
   background: #000;
-  top: 8px;
+  top: 10px;
   left: 0;
 }
-#header .hamMenu:before {
+#header .hamMenu > span:before {
   content: "";
-  width: 18px;
+  width: 30px;
   height: 3px;
   position: absolute;
   background: #000;
-  bottom: 8px;
+  bottom: 0px;
   left: 0;
 }
 
