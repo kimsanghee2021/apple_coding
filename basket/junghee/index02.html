@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="basket/junghee/common.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <div class="detail-right">
+        <div class="inner">
+            <div class="buy">
+                <form>
+                    <div class="buy-option">
+                        <label>구매수량</label>
+                        <div class="select-box">
+                            <select id="optSlect">
+                                <option data-price="50000" class="active">100개씩 50,000포인트 (30일)</option>
+                                <option data-price="50000">200개씩 50,000포인트 (30일)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="buy-list">
+                        <p>위 옵션선택 박스를 선택하시면 아래에 상품이 추가됩니다.</p>
+                        <ul>
+                            <li class="clearfix">
+                                <div class="box">
+                                    <p>한국인좋아요 (월)</p>
+                                    <p>- 100개씩 (30일)</p>
+                                </div>
+                                <div class="box">
+                                    <div class="quantity">
+                                        <input type="text" value="1" data-price="50000" readonly>
+                                        <span>
+                                            <a href="javascript:;" class="add">증가</a>
+                                            <a href="javascript:;" class="remove">감소</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <span>P 50,000</span>
+                                    <a href="javascript:;" onclick="removeOption(this);">삭제</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="buy-total">
+                        <b>최종결제금액</b>
+                        <span><em>₩</em><strong>50,000</strong></span>
+                    </div>
+                    <div class="buy-button">
+                        <button type="submit">작업 신청하기</button>
+                        <a href="">장바구니 담기</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="detail-fixed">
+        <a href="javascript:;" onclick="showDetail();">구매하기</a>
+    </div>
+</div>
+
+<script>
+    var totalTag = $(".buy-total span strong");
+    var regexp = /\B(?=(\d{3})+(?!\d))/g;
+
+    
+    // 옵션추가
+    $(document).on("change" , "#optSlect" , function(){
+        var copy = $(".buy-list ul li:first-of-type").clone();
+        var totalPrice = Number(totalTag.text().replace(/[^0-9]/g, ""));
+        var price = Number(copy.find("input[type=text]").attr("data-price"));
+        
+        if( $(this).find("option:selected").hasClass("active") == true ){
+            alert('이미 선택한 수량입니다.');
+            return false;
+        }
+    
+        $(this).find("option:selected").addClass("active");
+        totalTag.text(totalPrice + price);
+        copy.find("input[type=text]").val("1");
+        $(".buy-list ul").append(copy);
+    });
+    
+    // 옵션삭제
+    function removeOption(obj){
+        var parents = $(obj).closest("li");
+        var index = parents.index();
+        var limit = $(".buy-list ul li").length;
+        var quantity = Number(parents.find("input[type=text]").val());
+        var price = Number(parents.find("input[type=text]").attr("data-price")) * quantity;
+        var totalPrice = Number(totalTag.text().replace(/[^0-9]/g, ""));
+    
+        if(limit == 1){
+            alert('더이상 삭제할 수 없습니다.');
+            return false;
+        }
+    
+        if(!confirm('정말 삭제하시겠습니까?')){
+            return false;
+        }
+        
+        $("#optSlect option").eq(index).removeClass("active");
+        totalTag.text(totalPrice - price);
+        parents.remove();
+    }
+    
+    // 수량증가
+    $(document).on("click" , ".add" , function(){
+        var inputs = $(this).parent("span").siblings("input[type=text]");
+        var quantity = Number(inputs.val());
+        var totalPrice = Number(totalTag.text().replace(/[^0-9]/g, ""));
+        var price = Number(inputs.attr("data-price"));
+        
+        quantity = quantity+1;
+        totalTag.text(totalPrice + price);
+        inputs.val(quantity);
+    });
+    
+    // 수량감소
+    $(document).on("click" , ".remove" , function(){
+        var inputs = $(this).parent("span").siblings("input[type=text]");
+        var quantity = Number(inputs.val());
+        var totalPrice = Number(totalTag.text().replace(/[^0-9]/g, ""));
+        var price = Number(inputs.attr("data-price"));
+        
+        quantity = quantity-1;
+        
+        if(quantity < 1){
+            alert('최소 수량은 1개입니다.');
+            quantity = 1;
+            return false;
+        }
+        
+        totalTag.text( totalPrice - price );
+        inputs.val(quantity);
+    });
+    </script>
+    
+</body>
+</html>
