@@ -20,12 +20,7 @@ img {
 /* header */
 #header {
   position: relative;
-  height: 80px;
   background: #fff;
-}
-#header:after {
-  width: 100%;
-  height: ;
 }
 #header .logo {
   width: 200px;
@@ -46,34 +41,19 @@ img {
   display: block;
   width: 184px;
   padding: 26px 0;
-  background-color: red;
+  background-color: blue;
   text-align: center;
   font-size: 20px;
   color: #171717;
 }
-#header .menu > ul > li ul.submenu {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 80px;
-  background: #eee;
-  height: 170px;
-  z-index: 9;
-}
-#header:after {
-  content: "";
-  width: 100%;
+#header .submenu_bg {
   background: #fff;
+  z-index: 9;
+  display: block;
   position: absolute;
-  top: 80px;
-  left: 0;
-  height: 170px;
-  border-top: 1px solid #eee;
-  z-index: 8;
-  box-shadow: rgba(0, 0, 0, 0.5);
-}
-#header .menu > ul > li ul.submenu li {
   width: 100%;
+  border-top: 1px solid #eee;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 #header .hamMenu {
