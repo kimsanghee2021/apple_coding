@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니 수량 변경 및 자동 합계 구하기</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <section>
+        <table>
+            <tr>
+                <th>선택</th>
+                <th>이미지</th>
+                <th>상품명</th>
+                <th>가격</th>
+                <th>수량</th>
+                <th>합계</th>
+                <th>삭제</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="" name="buy"></td>
+                <td><img src="https://image.msscdn.net/images/goods_img/20160406/333203/333203_4_500.jpg" alt="" style="width: 100px; height: 100px;"></td>
+                <td><span>반바지</span></td>
+                <td><span>30,000원</span></td>
+                <td>
+                    <input type="text"> 
+                    <span><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                    <span><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                </td>
+                <td>40,000원</td>
+                <td><input type="button" value="삭제"></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="buy"></td>
+                <td><img src="http://img.danawa.com/prod_img/500000/611/361/img/5361611_1.jpg?shrink=500:500&_v=20190221123924" alt="" style="width: 100px; height: 100px;"></td>
+                <td><span>티셔츠</span></td>
+                <td><span>60,000원</span></td>
+                <td>
+                    <input type="text"> 
+                    <span><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                    <span><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                </td>
+                <td>40,000원</td>
+                <td><input type="button" value="삭제"></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="buy"></td>
+                <td><img src="https://static.coupangcdn.com/image/product/image/vendoritem/2018/10/17/3537071447/1af56767-e7ea-4438-8789-a4991160dc4b.jpg" alt="" style="width: 100px; height: 100px;"></td>
+                <td><span>모자</span></td>
+                <td><span>120,000원</span></td>
+                <td>
+                    <input type="text"> 
+                    <span><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                    <span><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                </td>
+                <td>40,000원</td>
+                <td><input type="button" value="삭제"></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="buy"></td>
+                <td><img src="http://www.bnburde.com/design/bnburde/mobile/main/best2_img.jpg" alt="" style="width: 100px; height: 100px;"></td>
+                <td><span>가방</span></td>
+                <td><span>180,000원</span></td>
+                <td>
+                    <input type="text"> 
+                    <span><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                    <span><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                </td>
+                <td>40,000원</td>
+                <td><input type="button" value="삭제"></td>
+            </tr>
+        </table>
+        <div style="margin-top:30px; float:right;">
+            <button>전체상품삭제</button>
+            <button>장바구니 비우기</button>
+            <p>상품갯수 : 4개</p>
+            <p>총 합계 금액 :74,200원</p>
+        </div>
+    </section>
+</body>
+</html>
