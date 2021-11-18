@@ -392,3 +392,54 @@ img {
 #footer .footerImg > img {
   width: 273px;
 }
+
+/* 공통 서브 페이지  */
+
+.subBnrImg {
+  width: 100%;
+  height: 450px;
+}
+.subBnrImg > p {
+  text-align: center;
+  font-size: 40px;
+  color: #020202;
+  line-height: 450px;
+}
+.subBnrTxt {
+  border-bottom: 1px solid #dddddd;
+  background: #fff;
+}
+.subBnrTxt .innerBox {
+  width: 400px;
+}
+.subBnrTxt .innerBox > li {
+  display: inline-block;
+}
+.subBnrTxt .innerBox > li > a {
+  display: block;
+  width: 100%;
+  padding: 30px 20px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  position: relative;
+  font-size: 18px;
+  color: #9f9f9f;
+}
+.subBnrTxt .innerBox > li > a::after {
+  width: 0%;
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  transition: all 0.3s;
+  background: #b60005;
+}
+.subBnrTxt .innerBox > li > a:hover {
+  color: #b60005;
+}
+.subBnrTxt .innerBox > li > a:hover::after {
+  width: 100%;
+}

@@ -13,6 +13,6 @@ $(function(){
         $submenu.stop().slideUp(200);
     });
     $hambarger.click(function(){
-        $submenu.toggle();
+        $submenu.fadeToggle(200)
     });
 }); 
