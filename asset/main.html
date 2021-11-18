@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메가쿡</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
     <header id="header">
-        <div class="innerBox">
+        <div class="flexBox">
             <h1 class="logo"><a href="main.html"><img src="images/logo.png" alt="메가쿡"></a></h1>
-            <nav>
-                <ul class="menu">
+            <nav class="menu">
+                <ul>
                     <li><a href="#"> 기업소개</a>  
                         <ul class="submenu">
                             <li><a href="#">기업개요</a></li>
@@ -37,9 +39,9 @@
                             <li><a href="#">온라인문의</a></li>
                         </ul>
                     </li>
-
                 </ul>
             </nav>
+            <div class="hamMenu"></div>
         </div>
     </header>
     <main>
@@ -48,30 +50,114 @@
                 <p>Functionality Electric Mega Flyer</p>
                 <h1>단체급식 전용 기능성 <br>
                    <span>초대형 전기튀김기</span> </h1>
-                   <p>혁신적인 탄화방지 가열기술과 고효율의 열복원율을 구현하여
+                <p>혁신적인 탄화방지 가열기술과 고효율의 열복원율을 구현하여<br>
                     최상의 조리 기술을 지원합니다.</p>
+                <a href="#" class="btn"><img src="images/main/banerBtn.png" alt=""></a>
             </div>
-            <div>
+            <div class="banImg">
                 <img src="images/main/main_img.png" alt="">
             </div>
         </section>
-        <section>
-            2번쨰 영역
+        <section id="slider">
+            <div class="sliderTxt">
+                <h1>
+                    <strong>단제급식<br>튀김 전용 조리기기</strong>를 <br>
+                </h1>
+                <h3><span>선도하는 기업</span>이 되겠습니다!</h3>
+                <p>(주)메가쿡은 세계 최초 대용량 튀김요리 조리 전용 <br>
+                    친환경 기능성 초대형 전기 튀김기를 개발·생산 판매하는 기업입니다</p>
+                <p>경제성과 기능성을 갖추고 대용량 조리가 가능하며 전기를 사용하는<br>
+                    친환경 제품으로 단체 급식 튀김요리 전용 조리기기의 <br>
+                    혁신적인 선두 주자로 거듭나는 기업이 되고자 노력하고<br>
+                    있습니다.</p> 
+                <button>more</button>
+            </div>
+            <div class="swiper-button">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background: url('images/main/sliderImg01.jpg') no-repeat center center;">
+                            <p>학교</p>
+                        </div>
+                        <div class="swiper-slide" style="background: url('images/main/sliderImg02.jpg') no-repeat center center;">
+                            <p>군대</p>
+                        </div>
+                        <div class="swiper-slide" style="background: url('images/main/sliderImg03.jpg') no-repeat center center;">
+                            <p>관공서</p>
+                        </div>
+                        <div class="swiper-slide" style="background: url('images/main/sliderImg04.jpg') no-repeat center center;">
+                            <p>단체급식업체</p>
+                        </div>
+                        <div class="swiper-slide" style="background: url('images/main/sliderImg01.jpg') no-repeat center center;">
+                            <p>학교</p>
+                        </div>
+                        <div class="swiper-slide" style="background: url('images/main/sliderImg02.jpg') no-repeat center center;">
+                            <p>군대</p>
+                        </div>
+                        <div class="swiper-slide" style="background: url('images/main/sliderImg03.jpg') no-repeat center center;">
+                            <p>관공서</p>
+                        </div>
+                        <div class="swiper-slide" style="background: url('images/main/sliderImg04.jpg') no-repeat center center;">
+                            <p>단체급식업체</p>
+                        </div>
+                    </div>
+                </div>
+
         </section>
-        <section>
+        <section id="section03">
             <img src="images/main/main_img02.jpg" alt="">
         </section>
         <section id="News">
             <div class="innerBox">
                 <h2>News</h2>
                 <div class="btn">+</div>
-                <ul>
+                <ul class="newsCard">
                     <li>
                         <img src="images/main/news01.jpg" alt="">
+                        <h3>업소용 친환경 전기 튀김기 대용량 메가쿡 대박예감</h3>
+                        <p class="mt15"> 
+                            <span>#튀김기</span>
+                            <span>#업소용튀김기</span>
+                            <span>#친환경</span>
+                            <span>단체급식</span>
+                        </p>
+                        <p class="mt40">2021.10.15</p>
                     </li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <img src="images/main/news01.jpg" alt="">
+                        <h3>업소용 친환경 전기 튀김기 대용량 메가쿡 대박예감</h3>
+                        <p class="mt15"> 
+                            <span>#튀김기</span>
+                            <span>#업소용튀김기</span>
+                            <span>#친환경</span>
+                            <span>단체급식</span>
+                        </p>
+                        <p class="mt50">2021.10.15</p>
+                    </li>
+                    <li>
+                        <img src="images/main/news01.jpg" alt="">
+                        <h3>업소용 친환경 전기 튀김기 대용량 메가쿡 대박예감</h3>
+                        <p class="mt15"> 
+                            <span>#튀김기</span>
+                            <span>#업소용튀김기</span>
+                            <span>#친환경</span>
+                            <span>단체급식</span>
+                        </p>
+                        <p class="mt40">2021.10.15</p>
+                    </li>
+                    <li>
+                        <img src="images/main/news01.jpg" alt="">
+                        <h3>업소용 친환경 전기 튀김기 대용량 메가쿡 대박예감</h3>
+                        <p class="mt15"> 
+                            <span>#튀김기</span>
+                            <span>#업소용튀김기</span>
+                            <span>#친환경</span>
+                            <span>단체급식</span>
+                        </p>
+                        <p class="mt40">2021.10.15</p>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -82,23 +168,39 @@
                 </ul>
         </section>
     </main>
-    <footer>
+    <footer id="footer">
         <div class="innerBox">
-            <div>
+            <div class="footerTxt">
                 <ul>
-                    <li><a href="#">개인정보처리방침</a></li>
+                    <li class="on"><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">이메일주소무단수집거부</a></li>
                     <li><a href="#">오시는길</a></li>
                 </ul>
-                <p>충청남도 아산치 염치읍 은행나무길 223, B층 104-2호 (충남경제진흥원)</p>
-                <p>대표전화 : 010-9490-6362    E-mail : dh5197@naver.com</p>
+                <p>충청남도 아산치 염치읍 은행나무길 223, B층 104-2호 (충남경제진흥원)<br>
+                대표전화 : 010-9490-6362 &nbsp;&nbsp; E-mail : dh5197@naver.com</p>
                 <p>Copyright 2021 ⓒ MEGACOOK. All Rights Reserved</p>
             </div>
-            <div>
+            <div class="footerImg">
                 <img src="images/main/footerLogo.png" alt="풋터로고">
                 <p><span>고객서비스센터</span>1588-8467</p>
             </div>
         </div>
     </footer>
+    <script>
+            var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5.2,
+        spaceBetween:30,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        loop:true,
+        freeMode: false,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });  
+    </script>
 </body>
 </html>
