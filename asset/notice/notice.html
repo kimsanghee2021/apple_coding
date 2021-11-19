@@ -85,40 +85,101 @@
         <div class="board_wrap">
             <table class="board_tbl _board">
                 <colgroup>
-                    <col style="width: 10%;">
-                    <col style="width: '*'">
-                    <col style="width: 10%">
-                    <col style="width: 10%;">
-                    <col style="width: 10%;">
+                    <col style="width: 115px;">
+                    <col style="width: 700px;">
+                    <col style="width: 100px">
+                    <col style="width: 100px">
+                    <col style="width: 100px;">
+                    <col style="width: 100px;">
                 </colgroup>
                 <thead>
                     <tr>
                         <th scope="col">번호</th>
                         <th scope="col">제목</th>
                         <th scope="col">첨부파일</th>
+                        <th scope="col">작성자</th>
                         <th scope="col">작성일</th>
                         <th scope="col">조회</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>88</td>
+                        <td>89</td>
                         <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
-                        <td><span>첨부파일</span></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>88</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
                         <td>2021.10.07</td>
                         <td>32</td>
                     </tr>
                     <tr>
                         <td>87</td>
                         <td><a href="#">제목 블라블라블라블라블라블라블라블라블라블라블라블라</a></td>
-                        <td><span>첨부파일</span></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
                         <td>2021.10.07</td>
                         <td>32</td>
                     </tr>
                     <tr>
                         <td>86</td>
                         <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
-                        <td><span>첨부파일</span></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>85</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>84</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>31</td>
+                    </tr>
+                    <tr>
+                        <td>83</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>82</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>81</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
                         <td>2021.10.07</td>
                         <td>32</td>
                     </tr>
@@ -126,31 +187,21 @@
             </table>
         </div>
         <div class="bottom_area">
-            <div id="pagination" class="pagination">
-                <button type="button" class="btn_paging_first" onclick="location.href=this.getAttribute('data-param-link')" data-param-link="?pageNum=1">
-                    <span class="a11y">처음으로</span>
-                </button>
-                <button type="button" class="btn_paging_prev" onclick="location.href=this.getAttribute('data-param-link')" data-param-link="?pageNum=1">
-                    <span class="a11y">이전으로</span>
-                </button>
-                <div class="page_num">
-                    <strong aria-current="page">1</strong>
-                    <a href="?pageNum=1">2</a>
-                    <a href="?pageNum=3">3</a>
-                    <a href="?pageNum=4">4</a>
-                    <a href="?pageNum=5">5</a>
-                    <a href="?pageNum=6">6</a>
-                    <a href="?pageNum=7">7</a>
-                    <a href="?pageNum=8">8</a>
-                    <a href="?pageNum=9">9</a>
-                </div>
-                <button type="button" class="btn_paging_next" onclick="location.href=this.getAttribute('data-param-link')" data-param-link="?pageNum=3">
-                    <span class="a11y">다음으로</span>
-                </button>
-                <button type="button" class="btn_paging_last" onclick="location.href=this.getAttribute('data-param-link')" data-param-link="?pageNum=9">
-                    <span class="a11y">마지막으로</span>
-                </button>
-            </div>
+            <ul class="pagination flexBox">
+                <li class="btn_paging_first pagin-btns"><a href="javascript:;">처음으로</a></li>
+                <li class="btn_paging_prev pagin-btns"><a href="javascript:;">이전으로</a></li>
+                <li class="on"><a href="#">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+                <li><a href="">8</a></li>
+                <li><a href="">9</a></li>
+                <li class="btn_paging_next pagin-btns"><a href="javascript:;">다음으로</a></li>
+                <li class="btn_paging_last pagin-btns"><a href="javascript:;">마지막으로</a></li>
+            </ul>
         </div>
     </section>
     <footer id="footer">

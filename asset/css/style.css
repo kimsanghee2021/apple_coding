@@ -462,6 +462,7 @@ img {
 /* notice */
 #bord_wrap {
   padding: 100px 60px;
+  box-sizing: border-box;
 }
 .board_option_area {
   width: 100%;
@@ -507,6 +508,7 @@ img {
   background: #868686 url(../images/sub/btn_search.png) no-repeat center center;
   border-radius: 5px;
   margin-left: 10px;
+  cursor: pointer;
 }
 /* 게시판 board */
 .board_tbl {
@@ -534,4 +536,77 @@ img {
 }
 .board_tbl tbody > tr > td:nth-child(2) {
   text-align: left;
+}
+.board_tbl tbody > tr > td:nth-child(2) > a {
+  transition: all 0.3s;
+  width: 700px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  font-weight: 400;
+  color: #2e2e2e;
+}
+.board_tbl tbody > tr > td:nth-child(2) > a:hover {
+  color: #b60005;
+  font-weight: 500;
+}
+.board_tbl tbody > tr > td:nth-child(3) > span {
+  width: 18px;
+  height: 20px;
+  background: url("../images/sub/file-icon.png") no-repeat center center;
+  display: inline-block;
+  text-indent: -999em;
+  text-align: center;
+}
+.bottom_area {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.pagination {
+  margin: 0 auto;
+  /* justify-content: center; */
+  align-content: center;
+  /* display: flex; */
+  align-items: center;
+}
+.pagination > li {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+}
+.pagination > li.on {
+  border: 1px solid #74bd14;
+  border-radius: 5px;
+}
+.pagination > li.on > a,
+.pagination > li > a:hover {
+  color: #74bd14;
+}
+.pagination > li > a {
+  color: #b3b3b3;
+  line-height: 30px;
+  font-size: 16px;
+}
+.pagination .pagin-btns {
+  width: 18px;
+  height: 18px;
+  text-indent: -999em;
+}
+.pagination .btn_paging_first {
+  background: url("../images/sub/btn_page_first.png") no-repeat center center;
+}
+.pagination .btn_paging_prev {
+  background: url("../images/sub/btn_page_prev.png") no-repeat center center;
+}
+.pagination .btn_paging_next {
+  background: url("../images/sub/btn_page_next.png") no-repeat center center;
+}
+.pagination .btn_paging_last {
+  background: url("../images/sub/btn_page_last.png") no-repeat center center;
+}
+.pagination .page_num {
 }
