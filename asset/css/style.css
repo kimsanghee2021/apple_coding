@@ -169,10 +169,12 @@ img {
 }
 
 /* slider */
+#slider {
+  display: flex;
+}
 .sliderTxt {
   background: #f8f9fa;
-  float: left;
-  width: 757px;
+  width: 40%;
   padding: 130px 0 100px 240px;
   box-sizing: border-box;
 }
@@ -224,11 +226,11 @@ img {
 }
 
 /* mySwiper */
-.mySwiper {
-  width: 1146px;
-  float: right;
+.swiper-group {
+  width: 60%;
   margin-top: 120px;
   background: #f8f9fa;
+  position: relative;
 }
 .mySwiper .swiper-slide {
   width: 210px;
@@ -257,12 +259,10 @@ img {
   opacity: 1;
 }
 .swiper-button {
-  position: relative;
+  position: absolute;
   width: 264px;
-  top: 22px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-left: -73px;
+  top: -98px;
+  left: -10px;
 }
 .swiper-button .swiper-button-next {
   background: url("../images/main/swiper-button-next.jpg") no-repeat center
@@ -608,5 +608,53 @@ img {
 .pagination .btn_paging_last {
   background: url("../images/sub/btn_page_last.png") no-repeat center center;
 }
-.pagination .page_num {
+
+/* online customer */
+/* 아이콘 */
+.ico.required {
+  position: relative;
+  width: 12px;
+  height: 4px;
+  padding-top: 12px;
+  overflow: hidden;
+}
+.ico.required::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: block;
+  content: "*";
+  line-height: 13px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #e80a0a;
+  letter-spacing: -0.04em;
+}
+.ico {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* 문의 리스트 테이블 */
+.customer-form-list {
+  border-top: 1px solid #000;
+}
+.customer-form-list tr {
+  border-bottom: 1px solid #ddd;
+}
+.customer-form-list th {
+  background: #f7f7f7;
+  text-align: left;
+  padding-left: 30px;
+}
+.customer-form-list td {
+  padding: 24px;
+  box-sizing: border-box;
+}
+/* 문의유형 */
+.customer-form-list .selected-option {
+  width: 280px;
+}
+/* 문의유형 */
+.customer-form-list .company__text {
 }

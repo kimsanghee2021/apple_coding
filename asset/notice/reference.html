@@ -63,9 +63,145 @@
             </ul>
         </div>
     </section>
-    <section>
-        <div class="innerBox" style="margin-top:100px; margin-bottom:100px;">
-            
+    <section id="bord_wrap" class="innerBox">
+        <div class="board_option_area">
+            <div class="board_option_txt">
+                <p><img src="../images/sub/notice-icon01.png" alt=""></p>
+                <p Class="totle">전체 게시물건 : <span>1,234</span>건</p>
+                <p class="page-count">page : <span>1</span>/ 157</p>
+            </div>
+            <div class="board_search_bar">
+                <select class="search" id="searchType" name="searchType" value="" title="분류">
+                    <option value="all">전체</option>
+                    <option value="title">제목</option>
+                    <option value="content">내용</option>
+                </select>
+                <div class="search_input flexBox">
+                    <input type="text" id="keyword" name="keyword" class="input_s" placeholder="내용을 입력하세요." value="" title="검색어 입력">
+                    <button type="button" class="btn_search" onclick="manual.action.search();" title="찾기"></button>
+                </div>
+            </div>
+        </div>
+        <div class="board_wrap">
+            <table class="board_tbl">
+                <colgroup>
+                    <col style="width: 115px;">
+                    <col style="width: 700px;">
+                    <col style="width: 100px">
+                    <col style="width: 100px">
+                    <col style="width: 100px;">
+                    <col style="width: 100px;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">번호</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">첨부파일</th>
+                        <th scope="col">작성자</th>
+                        <th scope="col">작성일</th>
+                        <th scope="col">조회</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>89</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>88</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블제목 블라블라블라블라블라블라블라블라블라 블라블라블라블라블라블라블라블</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>87</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>86</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>85</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>84</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>31</td>
+                    </tr>
+                    <tr>
+                        <td>83</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>82</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>81</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td><a href="#">제목 블라블라블라블라블라블라블라블라블라</a></td>
+                        <td><span class="file-icon">첨부파일</span></td>
+                        <td>관리자</td>
+                        <td>2021.10.07</td>
+                        <td>32</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="bottom_area">
+            <ul class="pagination flexBox">
+                <li class="btn_paging_first pagin-btns"><a href="javascript:;">처음으로</a></li>
+                <li class="btn_paging_prev pagin-btns"><a href="javascript:;">이전으로</a></li>
+                <li class="on"><a href="#">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+                <li><a href="">8</a></li>
+                <li><a href="">9</a></li>
+                <li class="btn_paging_next pagin-btns"><a href="javascript:;">다음으로</a></li>
+                <li class="btn_paging_last pagin-btns"><a href="javascript:;">마지막으로</a></li>
+            </ul>
         </div>
     </section>
     <footer id="footer">

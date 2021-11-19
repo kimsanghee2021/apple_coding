@@ -63,9 +63,106 @@
             </ul>
         </div>
     </section>
-    <section>
-        <div class="innerBox" style="margin-top:100px; margin-bottom:100px;">
-            
+    <section id="bord_wrap" class="innerBox">
+        <div class="board_wrap">
+            <table class="customer-form-list">
+                <caption>온라인 입력 테이블</caption>
+                <colgroup>
+                    <col style="width:200px;">
+                    <col style="width:auto;">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th class="required">문의 유형 <span class="ico required">필수</span></th>
+                        <td>
+                            <select class="selected-option" id="" name="" value="" title="문의유형">
+                                <option value="all">일반문의</option>
+                                <option value="all">일반문의</option>
+                                <option value="all">일반문의</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required">이름 <span class="ico required">필수</span></th>
+                        <td>
+                            <input type="text" placeholder="성함을 입력하세요" name="name" maxlength="35" id="name" value="" aria-invalid="false" required="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>회사명 <span class="ico required">필수</span></th>
+                        <td>
+                            <span class="company__text flexBox">
+                                <input type="text" placeholder="업체명을 입력하세요" name="company" maxlength="35" id="company">
+                                <input type="text" id="" name="" placeholder="직급">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>휴대폰 번호</th>
+                        <td>
+                            <div class="mobile-number flexBox">
+                                <span class="select">
+                                    <select id="inquiryPhone1" name="inquiryPhone1">
+                                        <option value="010">010</option>
+                                        <option value="011">011</option>
+                                        <option value="016">016</option>
+                                        <option value="017">017</option>
+                                        <option value="018">018</option>
+                                        <option value="019">019</option>
+                                    </select>
+                                </span>
+                                <em>-</em>
+                                <span class="form__text">
+                                    <input type="number" id="inquiryPhone2" name="inquiryPhone2" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); maxLengthCheck(this);">
+                                </span>
+                                <em>-</em>
+                                <span class="form__text">
+                                    <input type="number" id="inquiryPhone3" name="inquiryPhone3" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); maxLengthCheck(this);">
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required">이메일 주소</th>
+                        <td class="flexBox">
+                            <div class="input-box">
+                                <label for="userEmail1"></label>
+                                <input type="email" id="userEmail1" name="userEmail1" onkeyup="ContactUsForm.checkLength(this,50);ContactUsForm.emailSmall(this);" maxlength="50">
+                            </div>
+                            <span class="bar">@</span>
+                            <div class="input-box">
+                                <label for="userEmail2"></label>
+                                <input type="email" id="userEmail2" name="userEmail2" onkeyup="ContactUsForm.checkLength(this,50);ContactUsForm.emailSmall(this);" maxlength="50">
+                            </div>
+                            <div class="select-box-ui">
+                                <input type="hidden" id="userEmail2Option" name="userEmail2Option" value="" title="선택된 옵션" onchange="userEmailOption()">
+                                <button type="button" class="selected-option">선택</button>
+                                <div class="option-list">
+                                    <div>
+                                        <ul>
+                                            <li><button type="button" data-val="naver.com">naver.com</button></li>
+                                            <li><button type="button" data-val="gmail.com">gmail.com</button></li>
+                                            <li><button type="button" data-val="">직접입력</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required">제목</th>
+                        <td colspan="3">
+                            <span class="form__text"><input type="text" id="inquiryTitle" name="inquiryTitle" placeholder="입력해주세요" title="제목"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required valign-t">내용</th>
+                        <td colspan="3">
+                            <div class="form__textarea"><textarea id="inquiryStory" name="inquiryStory" placeholder="입력해주세요" title="내용"></textarea></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
     <footer id="footer">
