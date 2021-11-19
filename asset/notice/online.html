@@ -89,16 +89,16 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>회사명 <span class="ico required">필수</span></th>
+                        <th>회사정보 <span class="ico required">필수</span></th>
                         <td>
                             <span class="company__text flexBox">
-                                <input type="text" placeholder="업체명을 입력하세요" name="company" maxlength="35" id="company">
-                                <input type="text" id="" name="" placeholder="직급">
+                                <input type="text" placeholder="회사명" name="company" maxlength="35" id="company">
+                                <input type="text" id="company-order" name="company-order" placeholder="직급">
                             </span>
                         </td>
                     </tr>
                     <tr>
-                        <th>휴대폰 번호</th>
+                        <th>연락처 <span class="ico required">필수</span></th>
                         <td>
                             <div class="mobile-number flexBox">
                                 <span class="select">
@@ -113,18 +113,18 @@
                                 </span>
                                 <em>-</em>
                                 <span class="form__text">
-                                    <input type="number" id="inquiryPhone2" name="inquiryPhone2" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); maxLengthCheck(this);">
+                                    <input type="tel" id="inquiryPhone2" name="inquiryPhone2" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); maxLengthCheck(this);">
                                 </span>
                                 <em>-</em>
                                 <span class="form__text">
-                                    <input type="number" id="inquiryPhone3" name="inquiryPhone3" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); maxLengthCheck(this);">
+                                    <input type="tel" id="inquiryPhone3" name="inquiryPhone3" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); maxLengthCheck(this);">
                                 </span>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <th class="required">이메일 주소</th>
-                        <td class="flexBox">
+                        <th class="required">이메일 <span class="ico required">필수</span></th>
+                        <td class="email-form flexBox">
                             <div class="input-box">
                                 <label for="userEmail1"></label>
                                 <input type="email" id="userEmail1" name="userEmail1" onkeyup="ContactUsForm.checkLength(this,50);ContactUsForm.emailSmall(this);" maxlength="50">
@@ -134,31 +134,28 @@
                                 <label for="userEmail2"></label>
                                 <input type="email" id="userEmail2" name="userEmail2" onkeyup="ContactUsForm.checkLength(this,50);ContactUsForm.emailSmall(this);" maxlength="50">
                             </div>
-                            <div class="select-box-ui">
-                                <input type="hidden" id="userEmail2Option" name="userEmail2Option" value="" title="선택된 옵션" onchange="userEmailOption()">
-                                <button type="button" class="selected-option">선택</button>
-                                <div class="option-list">
-                                    <div>
-                                        <ul>
-                                            <li><button type="button" data-val="naver.com">naver.com</button></li>
-                                            <li><button type="button" data-val="gmail.com">gmail.com</button></li>
-                                            <li><button type="button" data-val="">직접입력</button></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <select id="emailServer" name="emailServer" class="input-box">
+                                <option value="직접입력">선택하세요</option>
+                                <option value="naver">naver.com</option>
+                                <option value="gmail">gmail.com</option>
+                                <option value="daum.net">daum.net</option>
+                                <option value="hanmail">hanmail.net</option>
+                                <option value="nate">nate.com</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required">제목 <span class="ico required">필수</span></th>
+                        <td>
+                            <span class="form__text"><input type="text" id="inquiryTitle" name="inquiryTitle" placeholder="제목을 입력하세요." title="제목"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required valign-t">문의내용 <span class="ico required">필수</span></th>
+                        <td>
+                            <div class="form__textarea">
+                                <textarea id="inquiryStory" name="inquiryStory" cols="50" row="10" placeholder="입력해주세요" title="내용"></textarea>
                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="required">제목</th>
-                        <td colspan="3">
-                            <span class="form__text"><input type="text" id="inquiryTitle" name="inquiryTitle" placeholder="입력해주세요" title="제목"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="required valign-t">내용</th>
-                        <td colspan="3">
-                            <div class="form__textarea"><textarea id="inquiryStory" name="inquiryStory" placeholder="입력해주세요" title="내용"></textarea></div>
                         </td>
                     </tr>
                 </tbody>

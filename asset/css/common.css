@@ -144,7 +144,22 @@ select {
   background: #fff;
   border-radius: 5px;
   text-indent: 20px;
+  line-height: 42px;
+  background-color: transparent;
+  position: relative;
 }
+select::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 6px);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+  transform: rotate(45deg);
+}
+
 input[type="tel"],
 input[type="time"],
 input[type="text"],
@@ -167,14 +182,16 @@ textarea {
   transition: all 0.5s;
   vertical-align: middle;
 }
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+textarea::placeholder {
   color: #b5b5b5;
   font-size: 12px;
   line-height: 100%;
 }
 textarea {
-  padding: 5px 0;
+  padding: 20px 0;
 }
+
 select:focus,
 textarea:focus,
 input:focus {

@@ -16,6 +16,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  align-items: center;
 }
 /* header */
 #header {
@@ -472,8 +473,6 @@ img {
   padding: 0 30px;
   line-height: 80px;
   box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
 }
 .board_option_area .board_option_txt > p {
   display: inline-block;
@@ -655,6 +654,33 @@ img {
 .customer-form-list .selected-option {
   width: 280px;
 }
-/* 문의유형 */
+/* 회사명 */
 .customer-form-list .company__text {
+  width: 600px;
+}
+.customer-form-list .company__text > input:first-child {
+  margin-right: 15px;
+}
+/* 휴대폰번호 */
+.customer-form-list .mobile-number {
+  width: 600px;
+}
+.customer-form-list .mobile-number > span {
+  width: 180px;
+}
+.customer-form-list .mobile-number > span > select {
+  width: 100%;
+}
+
+/* 이메일주소 */
+.customer-form-list .email-form {
+  width: 650px;
+}
+.customer-form-list .email-form .input-box {
+  width: 180px;
+}
+/* 문의내용 */
+.customer-form-list .form__textarea > textarea {
+  width: 100%;
+  height: 150px;
 }
