@@ -66,7 +66,8 @@
     <section id="bord_wrap" class="innerBox">
         <div class="board_option_area">
             <div class="board_option_txt">
-                <p Class="totle">전체계시물건 : 1,234건</p>
+                <p><img src="../images/sub/notice-icon01.png" alt=""></p>
+                <p Class="totle">전체 게시물건 : <span>1,234</span>건</p>
                 <p class="page-count">page : <span>1</span>/ 157</p>
             </div>
             <div class="board_search_bar">
@@ -75,9 +76,8 @@
                     <option value="title">제목</option>
                     <option value="content">내용</option>
                 </select>
-                <div class="search_input">
-                    <label for="keyword"></label>
-                    <input type="text" id="keyword" name="keyword" class="input_s" placeholder="검색어를 입력하세요." value="" title="검색어 입력">
+                <div class="search_input flexBox">
+                    <input type="text" id="keyword" name="keyword" class="input_s" placeholder="내용을 입력하세요." value="" title="검색어 입력">
                     <button type="button" class="btn_search" onclick="manual.action.search();" title="찾기"></button>
                 </div>
             </div>
