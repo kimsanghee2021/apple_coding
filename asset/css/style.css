@@ -458,3 +458,50 @@ img {
 .subBnrTxt .innerBox > li > a:hover::after {
   width: 100%;
 }
+
+/* notice */
+#bord_wrap {
+  padding: 100px 60px;
+}
+.board_option_area {
+  width: 100%;
+  background: #f8f8f8;
+  margin-bottom: 25px;
+  height: 80px;
+  padding: 0 30px;
+  line-height: 80px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.board_option_area .board_option_txt > p {
+  display: inline-block;
+  margin-right: 15px;
+}
+.board_option_area .board_search_bar {
+  display: flex;
+  width: 700px;
+  justify-content: space-between;
+}
+.board_option_area .board_search_bar .search {
+  width: 20%;
+}
+.board_option_area .board_search_bar .search_input {
+  width: 60%;
+}
+/**/
+.board_tbl._board thead tr th,
+.board_tbl._board tbody tr th {
+  padding: 20px 0;
+  font-size: 18px;
+}
+.board_tbl thead tr th,
+.board_tbl tbody tr th {
+  padding: 13px 0;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #000;
+}
