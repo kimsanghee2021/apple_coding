@@ -544,6 +544,7 @@ img {
 }
 .history-list > ul > li {
   line-height: 2.1;
+  font-size: 18px;
   display: flex;
 }
 .history-list > ul > li > strong {
