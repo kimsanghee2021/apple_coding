@@ -215,7 +215,7 @@ img {
   margin-top: 30px;
   letter-spacing: -2px;
 }
-.sliderTxt button {
+.sliderTxt > a {
   width: 134px;
   margin-top: 30px;
   padding: 13px 0;
@@ -224,8 +224,12 @@ img {
   border: 2px solid #000;
   text-align: center;
   display: block;
+  transition: all 0.3s;
 }
-
+.sliderTxt > a:hover {
+  background: #000;
+  color: #fff;
+}
 /* mySwiper */
 .swiper-group {
   width: 60%;
@@ -312,12 +316,32 @@ img {
   width: 100%;
 }
 #News .newsCard li {
-  width: 319px;
+  width: 320px;
+  overflow: hidden;
 }
-#News .newsCard li h3 {
+#News .newsCard li > .newsImg {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+#News .newsCard li > .newsImg img {
+  transition: transform 0.5s linear;
+}
+
+#News .newsCard li > h3 {
   color: #666;
   font-size: 18px;
   margin-top: 30px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  text-align: left;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: all 0.3s;
 }
 #News .newsCard li > p {
   color: #666666;
@@ -327,7 +351,18 @@ img {
   color: #999;
   margin-right: 5px;
 }
-
+#News .newsCard li:hover {
+  cursor: pointer;
+}
+#News .newsCard li:hover h3 {
+  color: #b60005;
+}
+#News .newsCard li:hover > .newsImg img {
+  transform: scale(1.1);
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
 /* artice */
 #artice {
   background: #f1f2f6;
@@ -558,7 +593,7 @@ img {
 .history-list > ul > li > span::before {
   content: "";
   position: absolute;
-  top: 13px;
+  top: 18px;
   left: 18px;
   width: 5px;
   height: 5px;
