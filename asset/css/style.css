@@ -317,7 +317,9 @@ img {
 }
 #News .newsCard li {
   width: 320px;
+  height: 430px;
   overflow: hidden;
+  position: relative;
 }
 #News .newsCard li > .newsImg {
   width: 100%;
@@ -345,6 +347,10 @@ img {
 }
 #News .newsCard li > p {
   color: #666666;
+}
+#News .newsCard li > p:last-child {
+  position: absolute;
+  bottom: 0;
 }
 #News .newsCard li > p > span {
   font-size: 15px;
