@@ -262,6 +262,9 @@ textarea[disabled] {
 .mb10 {
   margin-bottom: 10px !important;
 }
+.mb15 {
+  margin-bottom: 15px !important;
+}
 .mb20 {
   margin-bottom: 20px !important;
 }
@@ -270,6 +273,9 @@ textarea[disabled] {
 }
 .mb40 {
   margin-bottom: 40px !important;
+}
+.mb50 {
+  margin-bottom: 50px !important;
 }
 .mb60 {
   margin-bottom: 60px !important;

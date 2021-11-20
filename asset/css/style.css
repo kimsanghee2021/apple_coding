@@ -539,6 +539,47 @@ img {
   background: #b60005;
   border-radius: 100%;
 }
+.history-list > ul {
+  margin-top: 10px;
+}
+.history-list > ul > li {
+  line-height: 2.1;
+  display: flex;
+}
+.history-list > ul > li > strong {
+  display: block;
+}
+.history-list > ul > li > span {
+  padding-left: 30px;
+  position: relative;
+  display: block;
+}
+.history-list > ul > li > span::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 18px;
+  width: 5px;
+  height: 5px;
+  background: #d8d8d8;
+  border-radius: 100%;
+}
+/* location */
+
+#location h1 {
+  font-size: 24px;
+}
+#location > p {
+  font-size: 19px;
+  color: #646464;
+  font-weight: 300;
+  line-height: 1.8;
+}
+#location > p > span {
+  font-size: 16px;
+  color: #999999;
+  margin-right: 15px;
+}
 /* notice */
 #bord_wrap {
   padding: 100px 60px;

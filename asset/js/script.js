@@ -15,4 +15,13 @@ $(function(){
     $hambarger.click(function(){
         $submenu.fadeToggle(200)
     });
+    /* 카카오 지도 */
+    new daum.roughmap.Lander({
+		"timestamp" : "1637379629912",
+		"key" : "285gr",
+		"mapWidth" : "1440",
+		"mapHeight" : "600"
+	}).render();
 }); 
+
+
