@@ -460,6 +460,85 @@ img {
   width: 100%;
 }
 
+/* greeting */
+#greeting {
+  display: flex;
+  justify-content: space-between;
+}
+
+#greeting .greetingTxt > h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+#greeting .greetingTxt .greetingCont {
+  width: 90%;
+}
+#greeting .greetingTxt .greetingCont > p {
+  width: 100%;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.8;
+  margin-top: 30px;
+}
+#greeting .greetingTxt .greetingCont > h2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  margin-top: 50px;
+  margin-left: 15px;
+  position: relative;
+}
+#greeting .greetingTxt .greetingCont > h2::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -15px;
+  width: 3px;
+  height: 25px;
+  background: #f20c27;
+}
+.greeting_sign {
+  width: 133px;
+  height: 34px;
+  display: inline-block;
+  margin-left: 15px;
+}
+/* history */
+.history-list {
+  width: 90%;
+  margin-left: 80px;
+  border-left: 1px solid #ddd;
+  position: relative;
+  top: -50px;
+  padding: 70px 0 0 40px;
+  box-sizing: border-box;
+}
+.history-list h2 {
+  color: #b60005;
+  font-size: 35px;
+  position: relative;
+  margin-top: 30px;
+}
+.history-list h2::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -50px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #b60005;
+  border-radius: 100%;
+}
+.history-list h2::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: -44.5px;
+  width: 7px;
+  height: 7px;
+  background: #b60005;
+  border-radius: 100%;
+}
 /* notice */
 #bord_wrap {
   padding: 100px 60px;
@@ -683,4 +762,34 @@ img {
 .customer-form-list .form__textarea > textarea {
   width: 100%;
   height: 150px;
+}
+/* board_agree */
+.board_agree h3 {
+  font-size: 24px;
+  line-height: 3;
+}
+.board_agree .form__textarea > textarea {
+  background: #fff;
+  height: 250px;
+  border: 1px solid #d8d8d8;
+  font-size: 14px;
+}
+.board_agree .checkbox-area > input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d8d8d8;
+}
+.board_agree .checkbox-area > label {
+  font-size: 17px;
+  color: #666;
+  margin-left: 10px;
+}
+.board-btn {
+  width: 250px;
+  height: 60px;
+  background: #b60005;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  font-size: 18px;
 }

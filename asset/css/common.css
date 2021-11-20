@@ -145,7 +145,6 @@ select {
   border-radius: 5px;
   text-indent: 20px;
   line-height: 42px;
-  background-color: transparent;
   position: relative;
 }
 select::after {
@@ -175,7 +174,7 @@ textarea {
   height: 42px;
   font-size: 13px;
   color: #373737;
-  border: 1px solid #e9e9e9;
+  border: 1px solid #d8d8d8;
   background: #fff;
   text-indent: 20px;
   border-radius: 5px;
@@ -237,10 +236,10 @@ textarea[disabled] {
 
 /* 간격 */
 .mt15 {
-  margin-top: 15px;
+  margin-top: 15px !important;
 }
 .mt30 {
-  margin-top: 30px;
+  margin-top: 30px !important;
 }
 .mt40 {
   margin-top: 40px;
@@ -249,10 +248,13 @@ textarea[disabled] {
   margin-top: 45px;
 }
 .mt50 {
-  margin-top: 50px;
+  margin-top: 50px !important;
 }
 .mt65 {
   margin-top: 65px;
+}
+.mt80 {
+  margin-top: 80px !important;
 }
 .mt100 {
   margin-top: 100px !important;
