@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 터치시 슬라이드 넘기기</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <style>
+        *{margin:0; padding:0;}
+        h1{text-align:center; font-size: 60px; padding:50px 0;}
+        .slide-wrapper{overflow:hidden; position: relative;}
+        .slide-container{width:300vw; transition:all 0.3s; }
+        .slide-box{width: 100vw; float: left;}
+        .slide-box img{width:100%;}
+        .btns{width:50%; margin:0 auto;}
+        .btns button{width:20%; padding:10px 0; display: inline-block; cursor:pointer;}
+/* 
+        .btn-img{position: absolute; top:50%; left:50%; width:100%;} */
+        .btn-img button{width:100px; display: inline-block; background: rgba(0,0,0,0.5); color:#fff; padding: 30px 0; border:none;} 
+        .btn-img button.btn-prev{position: absolute; top:50%; left:0;  transform: translateY(-50%);}
+        .btn-img button.btn-next{position: absolute; top:50%; right:0; transform: translateY(-50%);}
+    </style>
+</head>
+<body>
+    <h1>이미지 슬라이드 </h1>
+    <div class="slide-wrapper" style="overflow: hidden; position: relative">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="https://cdn.pixabay.com/photo/2016/03/27/19/57/cold-1284028_960_720.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="https://cdn.pixabay.com/photo/2016/11/19/15/40/clothes-1839935_960_720.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="https://cdn.pixabay.com/photo/2017/08/01/08/16/couple-2563424_960_720.jpg">
+            </div>
+        </div>
+        <div class="btn-img">
+            <button class="btn-prev">이전</button>
+            <button class="btn-next">다음</button>
+        </div>
+    </div> 
+    <div class="btns">
+        <button class="slide-btn01">1</button>
+        <button class="slide-btn02">2</button>
+        <button class="slide-btn03">3</button>
+    </div>
+    <script>
+        $('.slide-btn01').click(function(){
+            $('.slide-container').css('transform','translateX(0vw)');
+        });
+        $('.slide-btn02').click(function(){
+            $('.slide-container').css('transform','translateX(-100vw)');
+        });
+        $('.slide-btn03').click(function(){
+            $('.slide-container').css({'transform':'translateX(-200vw)'});
+        });
+        function btn(target){
+            $(target).click(function(){
+                
+            });
+        };
+    </script>
+</body>
+</html>

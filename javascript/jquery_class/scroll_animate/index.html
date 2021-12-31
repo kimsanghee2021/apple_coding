@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        *{margin:0; padding:0;}
+        .card_background {
+            height: 2000px;
+            margin-top:200px;
+            margin-bottom: 1600px;
+        }
+        .card_box {
+            position: sticky;
+            top: 200px;
+            margin-top: 50px;
+        }
+        .card_box img {
+            display: block;
+            margin: auto;
+            max-width: 80%;
+        }
+
+        .title{
+            position: fixed; 
+            top:50px; 
+            left:50%; 
+            transform:translateX(-50%);   
+            font-size: 80px; text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">apple animation</h1>
+    <div class="card_background">
+        <div class="card_box"><img src="images/card1.png" alt=""></div>
+        <div class="card_box"><img src="images/card2.png" alt=""></div>
+        <div class="card_box"><img src="images/card3.png" alt=""></div>
+    </div>
+
+    <script>
+        $(window).scroll(function(){
+            var 높이 = $(this).scrollTop();
+            console.log(높이);
+            //스크롤 높이값이 73 ~ 680 왔을때 첫번째 카드 박스의 투명도가 0이 되어라
+
+            //1 = -(b-1)/71 * 71 + b - 투명도가 1일 때
+            //0 = a * 614 + b - 투명도가 0이 될 떄
+            //var y = a * 높이 + b
+            //a = -(b-1)/71
+            //a = -b/614
+
+            //$('.card_box').eq(0).css{{'opacity':y}};
+            
+        });
+    </script>
+</body>
+</html>
