@@ -38,8 +38,8 @@
             </div>
         </div>
         <div class="btn-img">
-            <button class="btn-prev">이전</button>
-            <button class="btn-next">다음</button>
+            <button class="btn-prev" onclick="slideBtn('prev')">이전</button>
+            <button class="btn-next"  onclick="slideBtn('next')">다음</button>
         </div>
     </div> 
     <div class="btns">
@@ -52,28 +52,21 @@
         var sliderLength = $('.slide-box').length;
         var sliderWrapper = $('.slide-container');
 
-        $('.btn-next').click(function(){
+        // $('.btn-next').click(function(){
 
-            if(sliderIndex < sliderLength){
-                sliderWrapper.css('transform','translateX(-'+ sliderIndex +'00vw)');
-                sliderIndex = sliderIndex+1;
-            }
-        });
-        $('.btn-prev').click(function(){
-            //지금 사진 3을 보고 잇으면 -100vw로 이동해야함
-            //지금 사진 2를 보고있으면 0vw로 이동해야함
-            //지금 사진 1를 보고 잇으면 -200vw로 이동해야함
-            // if(sliderIndex == 3){
-            //    sliderWrapper.css({transform:'translateX(-100vw)'});
-            //    sliderIndex =2;
-            //} else if( sliderIndex == 2){
-            //    sliderWrapper.css({transform:'translateX(0vw)'});
-            //    sliderIndex =1;
-            //}
-                sliderWrapper.css({transform:'translateX(-'+ (sliderIndex-2) +'00vw)'});
-                sliderIndex =sliderIndex -1;
+        //     if(sliderIndex < sliderLength){
+        //         sliderWrapper.css('transform','translateX(-'+ sliderIndex +'00vw)');
+        //         sliderIndex = sliderIndex+1;
 
-        });
+        //     }
+        // });
+        // $('.btn-prev').click(function(){
+        //         sliderWrapper.css({transform:'translateX(-'+ (sliderIndex-2) +'00vw)'});
+        //         sliderIndex =sliderIndex -1;
+
+        // });
+
+
 
         $('.slide-btn01').click(function(){
             $('.slide-container').css('transform','translateX(0vw)');
@@ -85,6 +78,22 @@
             $('.slide-container').css({'transform':'translateX(-200vw)'});
         });
 
+        function slideBtn(target){
+            if(target == 'next'){
+                sliderIndex++;
+                console.log(sliderIndex);
+                if(sliderIndex >= sliderLength){
+                    sliderIndex =0;
+                }
+            } else{
+                sliderIndex--;
+                if( sliderIndex < 0){
+                    sliderIndex = sliderLength-1;
+                    console.log(sliderIndex);
+                }
+            }
+            $('.slide-container').css({'transform':'translateX(-'+ sliderIndex +'00vw)'});
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>슬라이드 혼자 짜보기 </title>
+</head>
+<body>
+    <style>
+        *{margin:0; padding:0;}
+        ul,li{list-style: none;}
+        h1{text-align:center; padding:30px 0;}
+        .slideWrapper{width: 1280px; margin:0 auto; position: relative;}
+
+        /* 큰 이미지  */
+		.bigSlider{width: 1280px; height: 600px; overflow:hidden; margin-bottom: 50px;}
+        .bigSlider img{width: 100%;}
+
+        /* 작은 이미지  */
+        .smSlider{width: 1280px; margin:0 auto; display: flex; height: 174px; }
+        .smSlider li{width: 20%; cursor: pointer;}
+        .smSlider li.active{border:2px solid red;}
+        .smSlider li img{width: 100%;}
+
+        /* 버튼 */
+        .btns{position: absolute; top:35%; width:100%; background: red;}
+        .btns button{display: inline-block;position:absolute; width:80px; padding:30px 0; border: none; background: rgba(0,0,0,0.5);  color:#fff; cursor:pointer;}
+        .btns .prev-btn{left:0; }
+        .btns .next-btn{right:0;}
+    </style>
+    <h1>슬라이드 짜보기</h1>
+    <div class="slideWrapper">
+        <div class="bigSlider">
+            <img src="https://cdn.pixabay.com/photo/2016/12/19/18/21/snowflake-1918794_960_720.jpg" alt="">
+        </div>
+        <ul class="smSlider">
+            <li class="active"><img src="https://cdn.pixabay.com/photo/2016/12/19/18/21/snowflake-1918794_960_720.jpg" alt=""></li>
+            <li><img src="https://cdn.pixabay.com/photo/2021/12/07/05/28/bird-6852282_960_720.jpg" alt=""></li>
+            <li><img src="https://cdn.pixabay.com/photo/2021/12/13/14/57/trees-6868446_960_720.jpg" alt=""></li>
+            <li><img src="https://cdn.pixabay.com/photo/2021/12/16/17/09/town-6874893_960_720.jpg" alt=""></li>
+            <li><img src="https://cdn.pixabay.com/photo/2016/11/14/09/14/cat-1822979_960_720.jpg" alt=""></li>
+        </ul>
+		<div class="btns">
+			<button class="prev-btn" onclick="slideButton('prev')">prev</button>
+			<button class="next-btn" onclick="slideButton('next')">next</button>
+		</div>
+    </div>
+
+    <script>
+        var sliderIndex = 1;
+
+        var sliderLength = $('.smSlider li').length;
+        var bigSlider = $('.bigSlider img');
+        var smsliderImg = $('.smSlider li img');
+
+
+        smsliderImg.click(function(){
+            var idx = $(this).parent().index();
+            var imgSrc = $(this).attr('src');
+            console.log(imgSrc);
+
+            $(this).parent().addClass('active');
+            $(this).parent().siblings().removeClass('active');
+            bigSlider.fadeOut(function(){
+                bigSlider.attr('src',imgSrc).fadeIn(100);
+            });
+        });
+        function slideButton(target){
+            if( target == 'next'){
+                sliderIndex++;
+                if(sliderIndex >= sliderLength){
+                    sliderIndex = 0;
+                    console.log(sliderIndex);
+                }
+            } else{
+                sliderIndex--;
+                if(sliderIndex < 0){
+                    sliderIndex = sliderLength-1;
+                    console.log(sliderIndex);
+                }
+            }
+            bigSlider.fadeOut(function(){
+                bigSlider.attr('src',$('.smSlider li').eq(sliderIndex).find('img').attr('src')).fadeIn(600);
+            });
+            smsliderImg.eq(sliderIndex).parent().addClass('active');
+            smsliderImg.eq(sliderIndex).parent().siblings().removeClass('active');
+        };
+    </script>
+</body>
+</html>
