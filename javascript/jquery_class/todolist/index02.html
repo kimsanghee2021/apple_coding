@@ -8,9 +8,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         *{margin:0; padding:0;}
-        body{background: url('https://images.unsplash.com/photo-1504966981333-1ac8809be1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+        /* body{background: url('https://images.unsplash.com/photo-1504966981333-1ac8809be1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
         min-width: 100vw; min-height: 100vh; background-size: cover; display: flex; justify-content: center; align-items: center;
-        }
+        } */
+        body{background: gray;}
         input{border:none;}
         ul,li{list-style: none;}
 
@@ -21,15 +22,14 @@
 
         .list_wrapper .listBox input[type="text"]{width:75%; color:#fff; padding:20px 10px; font-size: 18px; box-sizing: border-box; color:#222;}
         .list_wrapper .listBox input[type="submit"]{width: 20%; background: #fff; cursor:pointer;}
-
         .list_wrapper .list{width:100%; margin-top: 50px; cursor: pointer;}
-        .list_wrapper .list li{width:100%; background: rgba(255,255,255,0.8); padding:15px 35px; box-sizing: border-box; position: relative; transition: all 0.3s;}
-        .list_wrapper .list li+li{margin-top: 10px;}
-        .list_wrapper .list li span{position: absolute; width:50px; height:51px;  right:0; top:0; text-align:center; line-height:51px; font-weight: 600;}
-        .list_wrapper .list li:hover{background: rgba(255,255,255,0.3);}
+        .list_wrapper .list p{width:100%; background: rgba(255,255,255,0.8); padding:15px 35px; box-sizing: border-box; position: relative; transition: all 0.3s;}
+        .list_wrapper .list p+p{margin-top: 10px;}
+        .list_wrapper .list p span{position: absolute; width:50px; height:51px;  right:0; top:0; text-align:center; line-height:51px; font-weight: 600;}
+        .list_wrapper .list p:hover{background: rgba(255,255,255,0.3);}
 
-        .list_wrapper .list li.checked{background: #000; color:#fff; text-decoration:line-through;}
-        .list_wrapper .list li.checked::before{content: ''; position: absolute; border-color:#fff; border-style:solid; border-width:0 2px 2px 0; top:18px; left:13px; height: 10px; width: 5px; transform: rotate(45deg);}
+        .list_wrapper .list p.checked{background: #000; color:#fff; text-decoration:line-through;}
+        .list_wrapper .list p.checked::before{content: ''; position: absolute; border-color:#fff; border-style:solid; border-width:0 2px 2px 0; top:18px; left:13px; height: 10px; width: 5px; transform: rotate(45deg);}
     </style>
 </head>
 <body>
@@ -41,12 +41,10 @@
                 <input type="submit" value="입력하기">
             </div>
         </div>
-        <ul class="list">
-            <li class="checked">설거지하기 <span>X</span></li>
-            <li>빨래하기  <span>X</span></li>
-            <li class="checked">옷정리하기  <span>X</span></li>
-            <li id="clone">신발정리하기  <span>X</span></li>
-        </ul>
+        <div class="list">
+            <p class="checked">설거지 하기</p>
+            <p id="clone">빨래하기</p>
+        </div>
     </div>
 
     <script>
@@ -54,25 +52,26 @@
         // 2. list li 클릭시 addClass = checked를 붙여라 
         // 3. list li span 클릭시  그 클릭한 list li 값을 제거해라
 
+        $('.list p').click(function(){
+            $(this).toggleClass('checked');
+        });
 
         $('input[type="submit"]').click(function(){
-            var $textVal = $('#add_list').val();
-            if(!$textVal== ''){
-                $('.list').append('<li>'+$textVal+'<span>X</span><li>');
+            var textVal = $('#add_list').val();
+            if(!textVal == ''){
+                var clone = $('#clone').clone().html(textVal);
+                console.log(clone);
+                clone.appendTo('.list');
+
                 $('#add_list').val('');
 
-            }else if($textVal == ''){
+            }else if(textVal == ''){
                 alert('입력해 주세요!');
                 return;
             }
         });
 
-        $('.list li span').click(function(){
-            $(this).parent().remove();
-        });
-        $('.list li').click(function(){
-            $(this).toggleClass('checked');
-        });
+
 
     </script>
 </body>
