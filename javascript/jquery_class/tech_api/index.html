@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <style>
         *{margin:0; padding:0;}
-        h1{text-align:center; font-size: 60px; padding:50px 0;}
+        h1{text-align:center; font-size: 10vw; padding:50px 0;}
         .slide-wrapper{overflow:hidden; position: relative;}
         .slide-container{width:300vw; transition:all 0.3s; }
         .slide-box{width: 100vw; float: left;}
@@ -48,6 +48,33 @@
         <button class="slide-btn03">3</button>
     </div>
     <script>
+        var sliderIndex = 1;
+        var sliderLength = $('.slide-box').length;
+        var sliderWrapper = $('.slide-container');
+
+        $('.btn-next').click(function(){
+
+            if(sliderIndex < sliderLength){
+                sliderWrapper.css('transform','translateX(-'+ sliderIndex +'00vw)');
+                sliderIndex = sliderIndex+1;
+            }
+        });
+        $('.btn-prev').click(function(){
+            //지금 사진 3을 보고 잇으면 -100vw로 이동해야함
+            //지금 사진 2를 보고있으면 0vw로 이동해야함
+            //지금 사진 1를 보고 잇으면 -200vw로 이동해야함
+            // if(sliderIndex == 3){
+            //    sliderWrapper.css({transform:'translateX(-100vw)'});
+            //    sliderIndex =2;
+            //} else if( sliderIndex == 2){
+            //    sliderWrapper.css({transform:'translateX(0vw)'});
+            //    sliderIndex =1;
+            //}
+                sliderWrapper.css({transform:'translateX(-'+ (sliderIndex-2) +'00vw)'});
+                sliderIndex =sliderIndex -1;
+
+        });
+
         $('.slide-btn01').click(function(){
             $('.slide-container').css('transform','translateX(0vw)');
         });
@@ -57,11 +84,7 @@
         $('.slide-btn03').click(function(){
             $('.slide-container').css({'transform':'translateX(-200vw)'});
         });
-        function btn(target){
-            $(target).click(function(){
-                
-            });
-        };
+
     </script>
 </body>
 </html>
