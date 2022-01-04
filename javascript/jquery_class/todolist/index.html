@@ -30,6 +30,7 @@
 
         .list_wrapper .list li.checked{background: #000; color:#fff; text-decoration:line-through;}
         .list_wrapper .list li.checked::before{content: ''; position: absolute; border-color:#fff; border-style:solid; border-width:0 2px 2px 0; top:18px; left:13px; height: 10px; width: 5px; transform: rotate(45deg);}
+        .list li.clone{display: none;}
     </style>
 </head>
 <body>
@@ -42,10 +43,7 @@
             </div>
         </div>
         <ul class="list">
-            <li class="checked">설거지하기 <span>X</span></li>
-            <li>빨래하기  <span>X</span></li>
-            <li class="checked">옷정리하기  <span>X</span></li>
-            <li id="clone">신발정리하기  <span>X</span></li>
+            <li class="clone" onclick="toggle(this)"><span onclick="remove(this)">X</span></li>
         </ul>
     </div>
 
@@ -53,12 +51,16 @@
         // 1.인풋박스에 텍스트 입력시  벨류값을 list li에 추가해라 
         // 2. list li 클릭시 addClass = checked를 붙여라 
         // 3. list li span 클릭시  그 클릭한 list li 값을 제거해라
-
+        // 4. li에 clone() 할 요소를 만든 후 display: none;을 시킨다.
+        // 5.  .clone를 복사하고 remove 시킨다.
 
         $('input[type="submit"]').click(function(){
             var $textVal = $('#add_list').val();
+            
             if(!$textVal== ''){
-                $('.list').append('<li>'+$textVal+'<span>X</span><li>');
+                var $clone = $('.clone').clone();
+                $clone.removeClass('clone');    
+                $('.list').append('<li onclick="toggle(this)">'+ $textVal +'<span onclick="remove(this)">X</span></li>');
                 $('#add_list').val('');
 
             }else if($textVal == ''){
@@ -66,14 +68,12 @@
                 return;
             }
         });
-
-        $('.list li span').click(function(){
-            $(this).parent().remove();
-        });
-        $('.list li').click(function(){
-            $(this).toggleClass('checked');
-        });
-
+        function toggle(target){
+            $(target).toggleClass('checked');
+        }
+        function remove(target2){
+            $(target2).parent().remove();
+        }
     </script>
 </body>
 </html>
