@@ -24,6 +24,7 @@
         .list_wrapper .listBox input[type="submit"]{width: 20%; background: #fff; cursor:pointer;}
         .list_wrapper .list{width:100%; margin-top: 50px; cursor: pointer;}
         .list_wrapper .list p{width:100%; background: rgba(255,255,255,0.8); padding:15px 35px; box-sizing: border-box; position: relative; transition: all 0.3s;}
+        .list_wrapper .list p.clone {display:none;}
         .list_wrapper .list p+p{margin-top: 10px;}
         .list_wrapper .list p span{position: absolute; width:50px; height:51px;  right:0; top:0; text-align:center; line-height:51px; font-weight: 600;}
         .list_wrapper .list p:hover{background: rgba(255,255,255,0.3);}
@@ -42,8 +43,7 @@
             </div>
         </div>
         <div class="list">
-            <p class="checked">설거지 하기</p>
-            <p id="clone">빨래하기</p>
+            <p class="clone" onclick="asd(this);"></p>
         </div>
     </div>
 
@@ -52,16 +52,12 @@
         // 2. list li 클릭시 addClass = checked를 붙여라 
         // 3. list li span 클릭시  그 클릭한 list li 값을 제거해라
 
-        $('.list p').click(function(){
-            $(this).toggleClass('checked');
-        });
-
         $('input[type="submit"]').click(function(){
             var textVal = $('#add_list').val();
             if(!textVal == ''){
-                var clone = $('#clone').clone().html(textVal);
-                console.log(clone);
-                clone.appendTo('.list');
+                var clone = $('.clone').clone().html(textVal);
+                clone.removeClass("clone");
+                $(".list").append(clone);
 
                 $('#add_list').val('');
 
@@ -71,7 +67,9 @@
             }
         });
 
-
+        function asd(obj){
+            $(obj).toggleClass('checked');
+        }
 
     </script>
 </body>
