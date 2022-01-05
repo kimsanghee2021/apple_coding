@@ -12,7 +12,7 @@
 <body>
     <div class="scrollTop"></div>
     <!--section01-->
-    <section id="section01">
+    <header id="header">
         <div class="innerBox">
             <h1 class="logo"><a href="#"><img src="images/logo_img.png" alt="스타벅스"></a></h1>
             <nav class="util_nav">
@@ -33,15 +33,15 @@
                 </ul>
             </nav>
         </div>
-    </section>
-<!--//section01-->
-<!--section01-->
+    </header>
+<!--//header-->
+<!--header-->
     <section id="section02">
         <div>
             <img src="images/banner.png" alt="">
         </div>
     </section>
-<!--//section01-->
+<!--//header-->
     <section id="section03">
         <div class="innerBox">
             <h2>STARBUCKS</h2>
@@ -62,23 +62,22 @@
 
     <script>
 
-        var navBar = $('#section01').outerHeight();
-        var navOffset = $('#section01').offset();
+        var navBar = $('#header').outerHeight();
+        var navOffset = $('#header').offset();
         var scrollTop = $(window).scrollTop();
 
-        $(window).scroll(function(){
-            $('#section01').addClass('scroll');
-                $('.util_nav ul li').stop().fadeOut(300);
-            if($(this).scrollTop() > navBar ){
+        // $(window).scroll(function(){
 
+        //     if($(this).scrollTop() > navBar ){
+        //         $('#header').addClass('scroll');
+        //         $('.util_nav ul li').stop().fadeOut(300);
+        //     }else{
+        //         $('#header').removeClass('scroll');
+        //         $('.util_nav ul li').stop().fadeIn(300);
+        //     }
+        //     $('.scrollTop').text($(window).scrollTop());
+        // });
 
-            }else{
-                $('#section01').removeClass('scroll');
-                $('.util_nav ul li').stop().fadeIn(300);
-            }
-            $('.scrollTop').text($(window).scrollTop());
-        });
- 
         $('.list li a').click(function(e){
             var parentEl = $(this).parent('li');
             e.preventDefault();
