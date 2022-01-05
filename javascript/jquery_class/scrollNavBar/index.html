@@ -67,13 +67,14 @@
         var scrollTop = $(window).scrollTop();
 
         $(window).scroll(function(){
+            $('#section01').addClass('scroll');
+                $('.util_nav ul li').stop().fadeOut(300);
             if($(this).scrollTop() > navBar ){
-                $('#section01').addClass('scroll');
-                $('.util_nav ul li').fadeOut(300);
+
 
             }else{
                 $('#section01').removeClass('scroll');
-                $('.util_nav ul li').fadeIn(300);
+                $('.util_nav ul li').stop().fadeIn(300);
             }
             $('.scrollTop').text($(window).scrollTop());
         });
