@@ -1,3 +1,12 @@
 {
-    "liveServer.settings.port": 5502
+    "liveServer.settings.port": 5502,
+    "editor.hover.above": false,
+    "editor.hover.enabled": false,
+    "html.hover.documentation": false,
+    "html.hover.references": false,
+    "css.hover.documentation": false,
+    "less.hover.documentation": false,
+    "less.hover.references": false,
+    "scss.hover.documentation": false,
+    "scss.hover.references": false
 }

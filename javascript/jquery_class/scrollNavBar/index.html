@@ -12,27 +12,30 @@
 <body>
     <div class="scrollTop"></div>
     <!--section01-->
+
     <header id="header">
-        <div class="innerBox">
-            <h1 class="logo"><a href="#"><img src="images/logo_img.png" alt="스타벅스"></a></h1>
-            <nav class="util_nav">
-                 <ul class="flex">
-                     <li><a href="#">Sign In</a></li>
-                     <li><a href="#">My Starbucks</a></li>
-                     <li><a href="#">Customer Service & Ideas</a></li>
-                     <li><a href="#">Find a Store</a></li>
-                 </ul>
-            </nav>
-            <nav class="sub_gnb_nav">
-                <ul class="flex">
-                    <li><a href="#">COFFEE</a></li>
-                    <li><a href="#">MENU</a></li>
-                    <li><a href="#">STORE</a></li>
-                    <li><a href="#">RESPONSLBILITY</a></li>
-                    <li><a href="#">REWARDS</a></li>
-                </ul>
-            </nav>
-        </div>
+        <section class="header_wrap">
+            <div class="innerBox">
+                <h1 class="logo"><a href="#"><img src="images/logo_img.png" alt="스타벅스"></a></h1>
+                <nav class="util_nav">
+                        <ul class="flex">
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">My Starbucks</a></li>
+                            <li><a href="#">Customer Service & Ideas</a></li>
+                            <li><a href="#">Find a Store</a></li>
+                        </ul>
+                </nav>
+                <nav class="sub_gnb_nav">
+                    <ul class="flex">
+                        <li><a href="#">COFFEE</a></li>
+                        <li><a href="#">MENU</a></li>
+                        <li><a href="#">STORE</a></li>
+                        <li><a href="#">RESPONSLBILITY</a></li>
+                        <li><a href="#">REWARDS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
     </header>
 <!--//header-->
 <!--header-->
@@ -63,20 +66,19 @@
     <script>
 
         var navBar = $('#header').outerHeight();
-        var navOffset = $('#header').offset();
+        var navOffset = $('#header').offset().top;
         var scrollTop = $(window).scrollTop();
 
-        // $(window).scroll(function(){
-
-        //     if($(this).scrollTop() > navBar ){
-        //         $('#header').addClass('scroll');
-        //         $('.util_nav ul li').stop().fadeOut(300);
-        //     }else{
-        //         $('#header').removeClass('scroll');
-        //         $('.util_nav ul li').stop().fadeIn(300);
-        //     }
-        //     $('.scrollTop').text($(window).scrollTop());
-        // });
+        $(window).scroll(function(){
+            if($(this).scrollTop() > navOffset){
+                $('#header').addClass('scroll');
+                $('.util_nav ul li').stop().fadeOut(100);
+            } else{
+                $('#header').removeClass('scroll');
+                $('.util_nav ul li').stop().fadeIn(100);
+            }
+            $('.scrollTop').text($(window).scrollTop());
+        });
 
         $('.list li a').click(function(e){
             var parentEl = $(this).parent('li');

@@ -11,8 +11,14 @@
 .scrollTop{width:30px; height:30px;background: rgba(0,0,0,0.5); color:#fff; text-align:center; line-height:30px; position: fixed; top:0; left:0; z-index: 99;}
 
 /* base */
-#header{background:rgba(246,245,239,0.8);border-top:2px solid #000; width:100%;position: fixed; }
+#header{position: relative; width:100%;}
+.header_wrap{background:rgba(246,245,239,0.8);border-top:2px solid #000; width:100%;}
 
+/*스크롤 할 시 */
+#header.scroll:after{content:''; display: block; width:100%; height:102px; background:red;}
+#header.scroll .header_wrap{background: rgba(246,245,239,1); z-index: 90; position: fixed; top:0; left:0;}
+#header.scroll .logo{width:60px; height: 60px;}
+#header.scroll .sub_gnb_nav ul li a{font-weight: 600;}
 
 /* header */
 #header .innerBox{display: flex; justify-content: space-between;  align-items: center; padding:20px 0px;}
@@ -30,11 +36,7 @@
 #header .util_nav ul li:last-child:after{width: 0;height: 0;}
 #header .util_nav ul li a{font-size: 10px; font-weight: 300;}
 
-/*스크롤 할 시 */
-#header.scroll{background: rgba(246,245,239,1); z-index: 90; position: fixed; top:0; left:0;}
-#header.scroll:after{content: ''; width:100%; height:117px; background:red;}
-#header.scroll .logo{width:60px; height: 60px;}
-#header.scroll .sub_gnb_nav ul li a{font-weight: 600;}
+
 
 /* section03 */
 #section03 {margin: 100px 0;}
