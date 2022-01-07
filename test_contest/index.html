@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header class="flex_sb">
+            <div class="flex_center">
+                <h1>내집꾸미기</h1>
+                <nav>
+                    <ul class="d_flex">
+                        <li class="active"><a href="#">홈</a></li>
+                        <li><a href="#">온라인 집들이</a></li>
+                        <li><a href="#">스토어</a></li>
+                        <li><a href="#">전문가</a></li>
+                        <li><a href="#">시공견적</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="gnb">
+                <button>로그인</button>
+                <button>회원가입</button>
+            </div>
+        </header>
+        <main>
+            <h1 class="hidden">내집꾸미기</h1>
+            <div class="search_wrap">
+                <input type="search" placeholder="검색어를 입력해주세요." id="search">
+                <label for="" class="hidden">검색창</label>
+            </div>
+            <section class="product_wrap flex_sb">
+                <article>
+                    <h2>모든 상품 리스트</h2>
+                    <ul class="product_list flex_sb">
+                        <li>
+                            <figure>
+                                <img src="images/pr1.JPG" alt="식기세척기">
+                            </figure>
+                            <figcaption>
+                                <h3>식기세척기</h3>
+                                <p>세척나라</p>
+                            </figcaption>
+                            <p>100,000</p>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="images/pr2.JPG" alt="원목침대 프레임">
+                            </figure>
+                            <figcaption>
+                                <h3>원목침대프레임</h3>
+                                <p>침대나라</p>
+                            </figcaption>
+                            <p>200,000</p>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="images/pr3.JPG" alt="천연 디퓨저 세트">
+                            </figure>
+                            <figcaption>
+                                <h3>천연 디퓨저 세트</h3>
+                                <p>향기나라</p>
+                            </figcaption>
+                            <p>300,000</p>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="images/pr4.JPG" alt="시원한 서큘레이터">
+                            </figure>
+                            <figcaption>
+                                <h3>시원한 서큘레이터</h3>
+                                <p>바람나라</p>
+                            </figcaption>
+                            <p>400,000</p>
+                        </li>
+                    </ul>
+                </article>
+                <aside class="cart_wrap">
+                    <h2>장바구니</h2>
+                    <div class="cart_show">
+                        <div class="cart_show_img">이곳에 상품을 놓아주세요.</div>
+                        <div class="cart_drop d_flex">
+                            <div class="cart_drop_img">
+                                <img src="images/pr1.JPG" alt="식기세척기">
+                            </div>
+                            <div class="cart_drop_txt">
+                                <h3>식기세척기</h3>
+                                <p>세척나라</p>
+                                <div class="cart_count d_flex">
+                                    <input type="button" value="-" name="" id="">
+                                    <input type="number" id="result">
+                                    <input type="button" value="+">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="cart_show_price">총 합계 0원</p>
+                        <button class="cart_go">구매하기</button>
+                    </div>
+
+                </aside>
+            </section>
+        </main>
+        <footer>
+                <address>상품진열코딩테스트 2022.01.07</address>
+        </footer>
+    </div>
+</body>
+</html>
