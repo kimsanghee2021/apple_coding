@@ -24,7 +24,7 @@ main{padding:40px; box-sizing: border-box; border:1px solid #ddd; border-top:0; 
 /** 상품리스트 **/
 .product_wrap .product_list{width:100%; gap:30px;}
 .product_wrap .product_list > li{width:25%; border-radius:10px; border:1px solid #ddd;}
-.product_wrap .product_list > li > figure {width: 100%; height:160px; background: red;}
+.product_wrap .product_list > li > figure {width: 100%; height:160px;}
 .product_wrap .product_list > li > figure > img{width: 100%; border-radius: 10px 10px 0 0px; height:160px;}
 .product_wrap .product_list > li > figcaption{padding:20px 10px; box-sizing: border-box;}
 .product_wrap .product_list > li > figcaption > h3{font-size: 18px; font-weight: 600; letter-spacing: -2px;}
