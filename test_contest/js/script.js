@@ -22,13 +22,8 @@ function getProducts(){
         url : './json/store.json',
         type: 'GET',
     }).done(function(data){
-        data.products.forEach(function(상품 , i){
-            appendProduct(상품, i);
-        });
+        console.log(data.products[0].brand_name);
     });
 }
 
-//상품을 넣는 코드 
-function appendProduct(product, index){
 
-}
