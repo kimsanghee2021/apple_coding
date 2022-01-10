@@ -6,15 +6,14 @@
 
 $(document).ready(function(){
     start();
+    $( ".product_list" ).sortable();
+    getProducts();
 });
 
 
 
 function start(){
     var products = [];
-
-    //데이터 넣는 아작스 
-    getProducts();
 }
 
 function getProducts(){
@@ -22,9 +21,37 @@ function getProducts(){
         url : './json/store.json',
         type: 'GET',
     }).done(function(data){
-        console.log(data.products[0].brand_name);
-        $('')
+        //console.log(data.products[0].brand_name);
+        var productsArr = [data.products];
+        var $photo = productsArr[0].photo;
+        console.log($photo);
+        
+        function checkSserch(productsArr){
+            return productsArr == $('#search').val();
+        }
+        function serchResult(){
+            document.querySelector('.product_list li').innerHTML = productsArr.filter(checkSserch);
+        }
+
+        var 장바구니상품 = $(`
+                        <li>
+                            <figure>
+                                <img src="images/${photo}" alt="${product_name}">
+                            </figure>
+                            <figcaption>
+                            <h3>${product_name}</h3>
+                            <p>${brand_name}</p>
+                            </figcaption>
+                            <p>${price}</p>
+                        </li>
+        `);
+
+        function product_list(){
+            for(var i =0; i > $('.product_list li').length; i++){
+                $(this).append(장바구니상품());
+            }
+        }
+
     });
 }
-
 
