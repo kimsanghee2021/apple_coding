@@ -23,6 +23,7 @@ function getProducts(){
         type: 'GET',
     }).done(function(data){
         console.log(data.products[0].brand_name);
+        $('')
     });
 }
 
