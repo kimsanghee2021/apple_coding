@@ -35,56 +35,18 @@
             <h1 class="hidden">내집꾸미기</h1>
             <div class="search_wrap">
                 <form action="" method="get">
-                    <input type="search" placeholder="검색어를 입력해주세요." id="search">
+                    <input type="text" placeholder="상품명을 입력해주세요." id="search">
                     <label for="" class="hidden">검색창</label>
+                    <button type="button" onclick="product_name1()">버튼</button>
                 </form>
             </div>
             <section class="product_wrap flex_sb">
                 <article>
                     <h2>모든 상품 리스트</h2>
-                    <ul class="product_list flex_sb">
-                        <li>
-                            <figure>
-                                <img src="images/pr1.JPG" alt="식기세척기">
-                            </figure>
-                            <figcaption>
-                                <h3>식기세척기</h3>
-                                <p>세척나라</p>
-                            </figcaption>
-                            <p>100,000</p>
-                        </li>
-                        <li>
-                            <figure>
-                                <img src="images/pr2.JPG" alt="원목침대 프레임">
-                            </figure>
-                            <figcaption>
-                                <h3>원목침대프레임</h3>
-                                <p>침대나라</p>
-                            </figcaption>
-                            <p>200,000</p>
-                        </li>
-                        <li>
-                            <figure>
-                                <img src="images/pr3.JPG" alt="천연 디퓨저 세트">
-                            </figure>
-                            <figcaption>
-                                <h3>천연 디퓨저 세트</h3>
-                                <p>향기나라</p>
-                            </figcaption>
-                            <p>300,000</p>
-                        </li>
-                        <li>
-                            <figure>
-                                <img src="images/pr4.JPG" alt="시원한 서큘레이터">
-                            </figure>
-                            <figcaption>
-                                <h3>시원한 서큘레이터</h3>
-                                <p>바람나라</p>
-                            </figcaption>
-                            <p>400,000</p>
-                        </li>
-                    </ul>
+                    <!-- <p class="alrtTxt">상품을 검색해주세요</p> -->
+                    <ul class="product_list d_flex"></ul>
                 </article>
+                
                 <aside class="cart_wrap">
                     <h2>장바구니</h2>
                     <div class="cart_show">

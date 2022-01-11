@@ -1,5 +1,6 @@
 @import url('./common.css');
 
+body{display: flex;justify-content: center; align-items: center; width: 100vw; height:100vh;}
 #wrap{width:1280px; margin:0 auto; position: relative;}
 
 /** header **/
@@ -14,8 +15,8 @@ header .gnb button{color:#222;}
 
 /** 검색창 **/
 .search_wrap{width:100%;}
+.search_wrap form{display: flex; justify-content: space-between;}
 .search_wrap input{width: 100%; border:1px solid #ddd; border-radius: 5px; padding:10px 20px; box-sizing: border-box;}
-
 /** 메인전체 **/
 main{padding:40px; box-sizing: border-box; border:1px solid #ddd; border-top:0; border-bottom:0;}
 .product_wrap{width:100%; margin:50px 0; gap:30px;}
@@ -29,7 +30,7 @@ main{padding:40px; box-sizing: border-box; border:1px solid #ddd; border-top:0; 
 .product_wrap .product_list > li > figcaption{padding:20px 10px; box-sizing: border-box; background: #fff;}
 .product_wrap .product_list > li > figcaption > h3{font-size: 18px; font-weight: 600; letter-spacing: -2px;}
 .product_wrap .product_list > li > figcaption > p{font-size: 14px;padding-top:15px;}
-.product_wrap .product_list li > p{background: #f7f7f7; border-top:1px solid #ddd; padding:15px; box-sizing: border-box; border-radius: 0 0 10px 10px;}
+.product_wrap .product_list li > span{background: #f7f7f7; border-top:1px solid #ddd; padding:15px; box-sizing: border-box; border-radius: 0 0 10px 10px; display: block;}
 
 /** 장바구니 **/
 .product_wrap .cart_wrap{width:393px;}

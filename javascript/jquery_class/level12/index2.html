@@ -48,9 +48,9 @@
         </div>
     </div>
     <div class="container my-4">
-        <button class="btn btn-danger" id="sortTxt">가나다순 정렬</button>
-        <button class="btn btn-danger" id="sortTxt2">다나가 역순정렬</button>
-        <button class="btn btn-danger" id="sortMony">금액이 가장 적은순</button>
+        <button class="btn btn-danger" id="sortTxt" onclick="abcTxt()">가나다순 정렬</button>
+        <button class="btn btn-danger" id="sortTxt2" onclick="reverseTxt()">다나가 역순정렬</button>
+        <button class="btn btn-danger" id="sortMony" onclick="lowMony()">금액이 가장 적은순</button>
         <input type="number" value="sortNum" min='20000' step="10000" id="sortNum"> 
         ~
         <input type="number" value="sortNum" min='50000' max="70000" step="10000" id="sortNum">
@@ -75,7 +75,7 @@
         sortProducts();
 
         //가나다순 정렬
-        $('#sortTxt').click(function(){
+        function abcTxt(){
             products.sort(function(a,b){
                 if(a.title < b.title ==true){
                     return -1;
@@ -84,10 +84,10 @@
                 }
             });
             sortProducts();
-        });
+        }
 
-        //다나가 역순 정렬
-        $('#sortTxt2').click(function(){
+        //역순 정렬
+        function reverseTxt(){
             products.sort(function(a,b){
                 if(a.title < b.title == false){
                     return -1;
@@ -96,18 +96,17 @@
                 }
             });
             sortProducts();
-        });
+        }
 
-        //금액이 가장 적은 순 
-        $('#sortMony').click(function(){
+        //금액이 적은 순
+        function lowMony(){
             products.sort(function(a,b){
-                return a.price - b.price;
+                return a.price -b.price;
             });
             sortProducts();
-        });
-
+        }
+            
         //금액이 2만원부터 4만원 사이의 금액만 노출
-      
     </script>
 </body>
 </html>
