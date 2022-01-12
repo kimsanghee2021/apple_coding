@@ -68,6 +68,29 @@ var obj4 = {
 };
 obj4.거지같은함수();
 
+//1. 예제문제 
+var 사람 ={
+    name : '손흥민',
+    sayHi : function(){
+        document.write('안녕 나는' + this.name);
+    }
+};
+사람.sayHi();
+
+//2. 예제문제 
+var 자료 = {
+    data : [1,2,3,4,5]
+};
+자료.전부더하기 = function(){
+    var 합 = 0;
+    this.data.forEach(function(a){
+        합 = 합 + a;
+    });
+    console.log(합);
+}
+자료.전부더하기();
+
+
     </script>
 </body>
 </html>
