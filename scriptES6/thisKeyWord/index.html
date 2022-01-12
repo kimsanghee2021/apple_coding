@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this 키워드를 알아보자</title>
+</head>
+<body>
+    <div></div>
+    <button id="btn">버튼</button>
+    <script>
+//*************** this 키워드를 알아보자 1.함수와 Object에서 사용하면? ***************//
+    //console.log(this); // window로 출력
+    var obj = {
+        data : 'sanghee',
+            함수(){    //메소드라고 부른다.
+            //console.log(this); // 여기서 this는 나를 포함하고 있는 obj라는 뜻
+        }
+    };
+    obj.함수();
+
+    var obj2 = {
+        data : {
+            간지함수 : function(){
+                //console.log(this);  //this는 메소드를 가지고 있는 오브젝트를 뜻합니다. ->  this는 '메소드의 주인님'을 지칭합니다. 
+            }
+        }
+    };
+    obj2.data.간지함수(); 
+
+    //* this는 오브젝트 내의 메소드(함수)에서 사용했을 때 메소드의 주인님 오브젝트를 출력해준다~
+
+
+
+
+
+
+//*************** this 키워드를 알아보자 2. event listener와 constructor ***************//
+
+document.getElementById('btn').addEventListener('click', function(e){
+    //console.log(this);
+    //console.log(e.currentTarget);
+    var arr = [1,2,3];
+    arr.forEach(function(a){
+        //console.log(this);
+    });
+});
+
+var obj3 = {
+    이름들 : ['김','이','박'],
+    함수 : function(){
+        obj3.이름들.forEach(function(){
+            //console.log(this);
+        });
+    }
+};
+obj3.함수();
+
+var obj4 = {
+    사람 : ['남자','여자'],
+    거지같은함수 : function(){
+        console.log(this); // obj4를 출력해준다.
+        obj4.사람.forEach(function(){
+            console.log(this); //window를 출력해준다. 반복문으로
+        });
+    }
+};
+obj4.거지같은함수();
+
+    </script>
+</body>
+</html>
