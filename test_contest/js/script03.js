@@ -21,8 +21,8 @@ function product_data(){
     }).done(
     function(data){
 
-        //제이슨파일 안에 있는 배열 불러오기
-        proucts_arr = data.products;
+            //제이슨파일 안에 있는 배열 불러오기
+            proucts_arr = data.products;
         
             // 제품 필터 
             function prodcut_filter(){
