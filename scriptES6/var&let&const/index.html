@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var let const와 선언,할당,범위</title>
+</head>
+<body>
+    <script>
+        //var는 재선언이 가능하다.
+        var 이름 = 'kim'; 
+        var 이름 = 'park'; 
+        console.log(이름); //park 출력
+        
+
+        //let, const은 재선언이 불가하다.
+        let 나이 = 20;
+        //let 나이 = 30;
+        console.log(나이);  //에러가 뜸
+
+        //var 이름 -> 선언    이름 = 'kim' -> 할당
+
+/*-----------------------------------------------------------*/
+
+        //var과 let은 재 할당이 가능하다.
+        var 옷 = '치마';
+        let 과일 = '딸기';
+        옷 = '바지';
+        과일 = '수박';
+        console.log(옷, 과일);  //바지 수박
+
+        //const는 재할당이 안된다. 상수
+        const 이불 = '배게';
+        //const 이불 = '치마'; - 에러뜸
+        const 사람 = {성별 : '남자'};
+        사람.성별 = '여자';
+        console.log(사람); // const의 배열을 바꾸는건 애러 안남
+
+        
+/*-----------------------------------------------------------*/
+
+//변수의 범위가 존재한다.
+function 함수(){
+    var 이름1 = 'kim'; //함수안에서만 존재한다.
+    console.log(이름1);
+}
+    console.log(이름1);  //함수안에서만 존재하기때문에 밖에서는 불러올수가 없다.
+함수();
+    </script>
+</body>
+</html>

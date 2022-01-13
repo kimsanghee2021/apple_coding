@@ -9,6 +9,7 @@
 <body>
     <div></div>
     <button id="btn">버튼</button>
+    <button id="클릭">버튼입니다요</button>
     <script>
 //*************** this 키워드를 알아보자 1.함수와 Object에서 사용하면? ***************//
     //console.log(this); // window로 출력
@@ -91,6 +92,48 @@ var 자료 = {
 자료.전부더하기();
 
 
-    </script>
+//간단한 메소드 만들기
+var 사람 = {
+    name : '손흥민',
+    sayHi : function(){
+        console.log('안녕 나는 ' + this.name);
+    }
+};
+사람.sayHi();
+
+
+//오브젝트 내의 데이터 전부 더해주는 메소드 만들기
+var obj14 = {
+    data : [1,2,3,4,5,8,1,8,123,20]
+};
+obj14.전부더하기 = function(){
+    var plus = 0;
+    this.data.forEach(function(a){
+        plus += a;
+    });
+    console.log(plus);
+};
+obj14.전부더하기();
+
+var obj = {
+	data : [1,5,10,52,22] 
+};
+
+
+//setTimeout을 이용해서 1초 후에 this.innerHTML을 콘솔창에 출력해라.
+document.getElementById('클릭').addEventListener('click',function(){
+    var btnTxt = this.innerHTML;
+    setTimeout(function() {
+        console.log(btnTxt);
+    },1000);
+});
+
+document.getElementById('클릭').addEventListener('click',function(){
+    setTimeout(() => {
+        console.log(this.innerHTML);
+    },1000);
+});
+
+</script>
 </body>
 </html>
