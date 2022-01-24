@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탬플릿 리터럴과 태그 리터럴에 대해 배워봅시다!</title>
+</head>
+<body>
+    <script>
+        //예제 바지 100개 양말 20개로 변경해줘라
+        var pants = 20;
+        var socks = 100;
+        `바지 ${pants} 양말 ${socks}`;
+
+        function products(물건들, 갯수01,갯수02){
+            document.write(물건들[1] + 갯수01 + 물건들[0] + 갯수02);
+        }
+        products`바지 ${pants} 양말 ${socks}`;
+
+        //예제2 - 만약 바지가 0개면 바지 안팔아요 양말 100라는 문자로 바꾸는 헤채분석기 제작해라
+
+        var pants01 = 0;
+        var socks01 = 100;
+        `바지${pants01} 양말${socks01}`;
+
+        function 해체분석기02(문자, 갯수01, 갯수02){
+            if(갯수01 == 0){
+                document.write(`<br>바지 다팔렸어요. ${문자[1]} ${갯수02}`);
+            }
+            console.log(문자);
+        }
+
+        해체분석기02`바지${pants01} 양말${socks01}`;
+
+
+        var 변수 = '손흥민';
+        var 문자 =`안녕하세요 ${변수} 입니다.`;
+
+
+        해채분석기01`안녕하세요 ${변수} 입니다.`;
+
+        function 해채분석기01(문자들, 변수들){
+            console.log(문자들[1] + 변수들 +문자들[0]);
+        }
+
+
+
+    </script>
+</body>
+</html>
