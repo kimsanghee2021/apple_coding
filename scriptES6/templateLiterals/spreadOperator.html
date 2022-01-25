@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스프레드 오퍼레이터</title>
+</head>
+<body>
+    ㅇㄴㅇㄴㅁㅇ
+    <script>
+        //spread operator는 안에있는 배열의 대괄호를 제거 해준다.
+
+
+        var 어레이 = ['hello','word'];
+        console.log(...어레이);
+
+        var 문자 = 'hello';
+        console.log(...문자); 
+
+        var a = [1,2,3];
+        var b = [4,5];
+        var c = [...a];
+        console.log(c);
+        //어레이 합치거나 복사가 가능하다.
+
+
+        //각각의 독립적인 값을 가지도록 array, object를 복사하려면?
+        var d = ['ㄱ','ㄴ','ㄷ'];
+        var e = [...d];
+
+        d[3] = 'ㄹ';
+
+        console.log(d); //['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ']
+        console.log(e); //['ㄱ', 'ㄴ', 'ㄷ']
+
+        //object
+        var obj01 = {a:1,b:2};
+        var obj02 = {...obj01, c:3};
+        var obj03 = {...obj02};
+        console.log(obj03); //{a: 1, b: 2, c: 3}
+
+        
+        //spread Operator apply,call 함수 알아보기
+        function plus(a,b,c){
+            console.log(a+b+c);
+        }
+        plus(10,20,30);
+    </script>
+</body>
+</html>
