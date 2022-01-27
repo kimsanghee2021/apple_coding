@@ -46,6 +46,21 @@
             console.log(a+b+c);
         }
         plus(10,20,30);
+
+
+        //스프레드 오퍼레이터 활용법 2번째 - apply, call 함수 알아보기 
+        var person = {
+            인사 : function(){
+                document.write(this.name + '안녕');
+            }
+        }
+
+        var person2 = {
+            name : '손흥민'
+        }
+        person.인사.apply(person2); 
+        // person.인사()라는 함수를 쓰는데 person2라는 오브젝트를 적용해서 실행해라~ 라는뜻
+        //apply 함수의 사용법은 실행할함수.apply(적용할곳);
     </script>
 </body>
 </html>
