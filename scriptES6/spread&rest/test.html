@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread와 rest의 차이점</title>
+</head>
+<body>
+    <script>
+        // 1. speard 문제
+        var a = [1,2,3];
+        var b = '김밥';
+        var c = [...b, ...a];
+        document.write(c+'<br>'); // 김밥,1,2,3
+
+        //2.문제 
+        var a = [1,2,3];
+        var b = ['you','are'];
+        var c = function(a,b){
+            document.write([[...a],...[...b]][1]);
+        }
+        c(a,b);
+
+        //3 문제
+        function 함수(a = 5, b=a*2){
+            document.write(a + b);
+            return 10;
+        }
+        함수(3);
+
+        //4.문제
+        function 함수(a = 5, b = a * 2){
+            document.write(a+b);
+        }
+        함수(undefined, undefined);
+
+        //5. array를 만들어주는 함수를 제작하고 싶습니다.
+        function 어레이(...rest){
+            return rest;
+        }
+
+        var newArray = 어레이(1,2,3,4,5,3,5,5,6,7,78,8,98,9,9,9);
+        console.log(newArray); 
+        
+        //6 최댓값 구하기 
+        Math.max(5,6,4,3);
+        var numbers = [2,3,4,5,6,1,3,2,5,5,4,6,7];
+        console.log(Math.max(...numbers));
+
+        //7. 글자를 알파벳 순으로 정렬 해주는 함수를 만들어보자 
+        console.log( [ 'b', 'c', 'a' ].sort() );
+
+        function 정렬(rest){
+            console.log([...rest].sort());
+        }
+        정렬('bear'); 
+
+        //8.글자세기()
+        function 글자세기(글){
+            var 결과 = {};
+            [...글].forEach(function(a){
+                if(결과[a] > 0){결과[a]++}else{결과[a] = 1}
+            });
+            console.log(결과);
+        }
+        글자세기('aabbc');
+
+        var 어레이1 = [1,2,3];
+        console.log(...어레이1);
+
+        var 이름1 = {name : 'kim'};
+        var 이름2 = 이름1;
+        이름1.name = 'park';
+        console.log(이름2.name);
+    </script>
+</body>
+</html>
