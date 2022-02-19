@@ -1,0 +1,74 @@
+body {
+  margin: 0 auto;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+ul, li, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  box-sizing: border-box;
+}
+.list li {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  padding: 20px;
+}
+.list li.active {
+  background: #333;
+  color: #fff;
+}
+
+.alertBox {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.alert, .alert-red, .alert-blue, .alert-green {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.alert-green {
+  color: #3c763d;
+  background: #deefd7;
+}
+
+.alert-blue {
+  color: #31708f;
+  background: #d9edf7;
+}
+
+.alert-red {
+  color: #a66d3b;
+  background: #fcf8e3;
+}
+
+.row {
+  display: flex;
+  margin: auto;
+  width: 1200px;
+}
+.row div {
+  background: #ded9e5;
+  color: #919097;
+  padding: 20px;
+  width: 100%;
+  border: 1px solid #919097;
+  margin-left: -1px;
+  margin-top: -1px;
+}/*# sourceMappingURL=homwork.css.map */
