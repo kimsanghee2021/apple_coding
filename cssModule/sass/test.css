@@ -1,9 +1,5 @@
-:root{
-  --main-background : red;
-}
-
 .background {
-  background-color: var(--main-background);
+  background-color: #2a4cb2;
   font-size: 32px;
 }
 
@@ -11,4 +7,58 @@
   width: 100%;
   background: #2a4cb2;
   font-size: 18px;
+}
+
+.main-bg h4 {
+  font-size: 16px;
+}
+
+.main-bg button {
+  color: red;
+}
+
+.main-bg {
+  width: 100px;
+}
+.main-bg h4 {
+  font-size: 16px;
+}
+.main-bg button {
+  color: red;
+}
+
+.btn-blue, .btn-red, .btn-green {
+  width: 100px;
+  height: 30px;
+  padding: 20px;
+}
+
+.btn-green {
+  color: green;
+}
+
+.btn-red {
+  color: red;
+}
+
+.btn-blue {
+  color: blue;
+}
+
+.bg, .bg-blue, .bg-red, .bg-green {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-blue {
+  background-color: blue;
 }/*# sourceMappingURL=test.css.map */

@@ -11,3 +11,51 @@ $기본사이즈 : 16px;
     background:$main-color;
     font-size: ($기본사이즈 + 2px);
 }
+
+.main-bg h4{font-size:16px;}
+.main-bg button{color:red;}
+
+//nesting 문법
+.main-bg{
+    width:100px;
+    h4{
+        font-size:16px;
+    }
+    button{
+        color:red;
+    }
+}
+
+//@extend문법
+%btn{
+    width:100px; height:30px; padding:20px; 
+}
+.btn-green{
+    @extend %btn;
+    color:green;
+}
+.btn-red{
+    @extend %btn;
+    color:red;
+}
+.btn-blue{
+    @extend %btn;
+    color:blue;
+}
+
+//div 박스를 초록 빨강 파랑으로 디자인 해보기
+.bg{
+    width:200px; height:200px; padding:20px;
+}
+.bg-green{
+    @extend .bg;
+    background-color:green;
+}
+.bg-red{
+    @extend .bg;
+    background-color:red;
+}
+.bg-blue{
+    @extend .bg;
+    background-color:blue;
+}
