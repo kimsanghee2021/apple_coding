@@ -1,0 +1,13 @@
+$main-color : #2a4cb2;
+$sub-color : #eee;
+$기본사이즈 : 16px;
+
+.background{
+    background-color: $main-color;
+    font-size: ($기본사이즈 * 2);
+}
+.box{
+    width:100%;
+    background:$main-color;
+    font-size: ($기본사이즈 + 2px);
+}
