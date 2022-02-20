@@ -23,9 +23,12 @@ ul, li, ol {
   margin-top: -1px;
   padding: 20px;
 }
-.list li.active {
+.list .active {
   background: #333;
   color: #fff;
+}
+.list :hover {
+  background: blue;
 }
 
 .alertBox {
@@ -58,17 +61,20 @@ ul, li, ol {
   background: #fcf8e3;
 }
 
-.row {
-  display: flex;
-  margin: auto;
-  width: 1200px;
-}
-.row div {
+.row .col-6 {
+  float: left;
+  padding: 15px;
+  width: 50%;
   background: #ded9e5;
   color: #919097;
-  padding: 20px;
-  width: 100%;
   border: 1px solid #919097;
-  margin-left: -1px;
-  margin-top: -1px;
+}
+
+.row .col-4 {
+  float: left;
+  padding: 15px;
+  width: 33.3%;
+  background: #ded9e5;
+  color: #919097;
+  border: 1px solid #919097;
 }/*# sourceMappingURL=homwork.css.map */

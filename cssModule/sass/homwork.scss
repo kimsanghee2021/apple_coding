@@ -6,9 +6,12 @@
         margin-top:-1px;
         padding:20px;
     }
-    li.active{
+    .active{
         background:#333;
         color:#fff;
+    }
+    :hover{
+        background:blue;
     }
 }
 .alertBox{
@@ -37,18 +40,17 @@
     color:#a66d3b;
     background:#fcf8e3;
 }
-.row{
-    display: flex;
-    margin: auto;
-    width:1200px;
-
-    div{
-        background:#ded9e5;
-        color:#919097;
-        padding:20px;
-        width:100%;
-        border:1px solid #919097;
-        margin-left:-1px;
-        margin-top:-1px;
-    }
+@mixin column($넓이){
+    float:left;
+    padding:15px;
+    width:$넓이;
+    background: #ded9e5;
+    color:#919097;
+    border:1px solid #919097;
+}
+.row .col-6{
+    @include column(50%);
+}
+.row .col-4{
+    @include column(33.3%);
 }
