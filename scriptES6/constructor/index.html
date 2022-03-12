@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor의 정의 </title>
+</head>
+<body>
+    <script>
+    // let 학생1 = {
+    //     name : 'kim', 
+    //     age : 15, 
+    //     sayHi :function(){
+    //     console.log('안녕하세요.'+this.name+'입니다.');
+    // }}
+    // 학생1.sayHi();
+
+    function student(name01,age01){
+        this.name = name01;
+        this.age = age01;
+        this.sayHi = function(){
+            console.log('안녕하세요.'+this.name+'입니다. 나이는'+ this.age + '입니다.');
+        }
+    }
+    // this : student 에서 새로 생성되는 object(instance)
+    // student : object생성 기계(constructor,생성자)
+    let 학생1 = new student('성욱',25);
+    let 학생2 = new student('상희',27);
+
+    학생1.sayHi();
+    학생2.sayHi();
+
+
+    //간단 연습문제 : 쇼핑몰에서 쓸 상품데이터를 오브젝트로 여러개 만들고 싶습니다.
+    // let product1 = {name:'shirts',price:5000};
+    // let product2 = {name:'pants',price:9000};
+
+    function products(product , price){
+        this.name = product;
+        this.price = price;
+        this.tag = function(){
+            document.write(this.name+'은 금액이 '+this.price+'이고 부가세는' + this.price*0.1+'입니다.<br>');
+        }
+    }
+    let shirt = new products('shirts',5000);
+    let pants = new products('pants',9000);
+    shirt.tag();
+    pants.tag();
+
+    </script>
+</body>
+</html>   

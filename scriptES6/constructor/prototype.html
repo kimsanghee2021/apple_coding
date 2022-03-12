@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype의 사용법</title>
+</head>
+<body>
+    <script>
+        //prototype은 유전자다. - prototype에 값을 추가하면 모든 자식들이 물려받기 가능하기 떄문
+        function parent(name01,age01){
+            this.name = name01;
+            this.age = age01;
+            this.produce = function(){
+                document.write('부모의 요소를 물려받은 '+this.name+'이구요 나이는'+this.age+'입니다.');
+            }
+        }
+        parent.prototype.gender = '여';
+
+        let sanghee = new parent('상희',20);
+        console.log(sanghee.gender); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor & prototype 연습문제</title>
+</head>
+<body>
+    <script>
+        // var 학생1 = {name : 'kim',age : 20}
+        // var 학생2 = {name : 'Park',age : 21}
+        // var 학생3 = {name : 'Lee',age : 22}
+
+
+        function 출석부(name01,age01 ){
+            this.name = name01;
+            this.age = age01;
+            this.sayHi = function(){
+                document.write('안녕 나는'+this.name +'야 나이는' + this.age+'야');
+            }
+        }
+        let 학생1 = new 출석부('kim',20);
+        let 학생2 = new 출석부('Park',21);
+        let 학생3 = new 출석부('Lee',22);
+        학생1.sayHi();
+
+
+
+        function parent(){
+            this.name = 'kim';
+        }
+        var a = new parent();
+        a.__proto__.name = 'Park';
+        console.log(a.name);
+
+
+        //모든 array에 적용 할 수 있는 함수를 직섭 새로 만들려면?
+        //remove3()함수는 어떻게, 어디에 만들어야 모든 array에 쓸 수 있을까여?
+
+
+        Array.prototype.remove3 = function(){
+            for(let i = 0; i < this.length; i++){
+                if(this[i]==3){
+                    this.splice(i,1);
+                }
+            }
+        }
+        var arr = [1,2,3];
+        arr.remove3();
+        console.log(arr);               
+
+
+    </script>
+</body>
+</html>
