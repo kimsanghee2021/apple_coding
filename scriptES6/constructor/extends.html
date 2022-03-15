@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상속 기능 구현 - es5 es6</title>
+</head>
+<body>
+    <script>
+        var 부모 = {name : 'kim',age:50}
+        //자식은 부모를 상속한다고 선언하는것이다. - es5 버전
+        var 자식 = Object.create(부모);
+
+        자식.age = 20;
+        
+        var 손자 = Object.create(자식);
+        console.log(손자.age);
+
+//__proto__는 내가 어떤 유전자 즉 누가 부모인지 확인하거나 지정해줄 수 잇고 
+//Object.ceate는 내가 어떤 부모밑으로 들어가는지 지정해 줄수 있다.
+
+class Parent{
+    constructor(){
+        this.name = 'sanghee';
+        this.age = 30;
+    }
+    sayHi(){console.log('hello')}
+}
+var 자식01 = new Parent();
+console.log(자식01.sayHi());
+
+    </script>
+</body>
+</html>
