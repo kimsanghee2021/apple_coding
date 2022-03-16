@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var 사람 ={
+        //     name : '상희',
+        //     age : 20,
+        //     get nextAge(){//get 함수는 무조건 return이 있어야한다. 
+        //         return this.age + 1
+        //     },
+        //     set setAge(나이){//set함수는 꼭 파라미터가 1개는 있어야한다. 2개는 안됨
+        //         this.age = parseInt(나이);
+        //         //console.log(this.age);
+        //     }
+        // }
+        // 사람.setAge = '20';
+
+        class 사람{
+            constructor(){
+                this.name = '상희';
+                this.age = 20;
+            }
+            get nextAge(){
+                return this.age + 1;
+            }
+            set changeAge(나이){
+                this.age = 나이;
+            }
+        }
+        var 사람1 = new 사람();
+
+//강아지와 고양이의 데이터를 class로 만들어서 편리하게 쓰기
+        class Dogs{
+            constructor(name,color){
+                this.type = name;
+                this.color = color;
+            }
+            한살먹기(){
+                console.error('강아지는 나이가 없습니다.');
+            }
+        }
+        var dog1 = new Dogs('말티즈','White');
+        var dog2 = new Dogs('진돗개','brown');
+        console.log(dog1,dog2);
+        
+
+        class Cats extends Dogs{
+            constructor(name,color,age){
+                super(name,color);
+                this.age = age;
+            }
+            한살먹기(){
+                return this.age + 1;
+            }
+        }
+        var cat1 = new Cats('코숏','white',5);
+        var cat2 = new Cats('러시안블루','brown',2);
+        console.log(cat1.한살먹기(),cat2.한살먹기());
+
+
+        class Unit{
+            constructor(){
+                this.공격력 = 5;
+                this.체력 = 101;
+            }
+            get battlePoint(){
+                return this.공격력 + this.체력;
+            }
+            set heal(회복){
+                this.체력 = this.체력 + 회복;
+            }
+        }
+        var 인스턴스 = new Unit();
+        // var 인스턴스1 = 인스턴스.battlePoint;
+        인스턴스.heal = 50;
+        console.log(인스턴스);
+    </script>
+</body>
+</html>
