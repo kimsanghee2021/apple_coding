@@ -80,6 +80,26 @@
         // var 인스턴스1 = 인스턴스.battlePoint;
         인스턴스.heal = 50;
         console.log(인스턴스);
+
+
+        var data = {
+            odd : [],
+            even : [],
+            아무 : function(...target){
+                for(const el of target){
+                    if(el%2 == 1){
+                        this.odd.push(el);
+                    } else{
+                        this.even.push(el);
+                    }
+                }
+            },
+            get getter함수(){
+                return[...this.odd, ...this.even].sort();
+            }
+        }
+        data.아무(1,2,3);
+        console.log(data.getter함수);
     </script>
 </body>
 </html>
