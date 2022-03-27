@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+</head>
+<body>
+
+    <!-- img 이미지 로딩 성공시 특정 코드 실행 -->
+    <img id="test" src="https://codingapple1.github.io/kona.jpg"> 
+    <script>
+        const imgLoad = new Promise(function(성공,실패){
+
+            const img = document.querySelector('#test');
+            img.addEventListener('loading',function(){
+                성공();
+            });
+            img.addEventListener('error',function(){
+                실패();
+            });
+        });
+        imgLoad.then(function(){
+            console.log('이미지 로드에 성공하였습니다.');
+        }).catch(function(){
+            console.log('이미지 로드에 실패 하였습니다.');
+        });
+    </script>
+
+    <script>
+        $.ajax({
+            type:'get',
+            url : 'https://codingapple1.github.io/hello.txt'
+        });
+    </script>
+</body>
+</html>

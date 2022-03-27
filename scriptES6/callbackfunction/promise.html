@@ -8,20 +8,40 @@
 </head>
 <body>
     <script>
-        var 프로미스 = new Promise(function(resolve, reject){ //성공, 실패
-            resolve(); //성공
-            reject();//실패
-        });
-
-        //than 일 경우는 성공하면 실행시켜라 라는 뜻
+        //then 일 경우는 성공하면 실행시켜라 라는 뜻
         //catch는 실패 했을 경우 이 코드 실행시켜라 
         //finally는 성공하든 실패하던 실행시켜라라는 뜻
-        프로미스.than(function(){
 
-        })
-        .than(function(){
-
+        var 프로미스 = new Promise(function(성공, 실패){ //성공, 실패
+            var 어려운연산 = 1+1;
+            실패(어려운연산); //성공
         });
+
+        프로미스.then(function(결과){
+            console.log('성공했어요' + 결과);
+        })
+        .catch(function(결과){
+            console.log('실패 했습니다.'+결과);
+        });
+
+//예시 2. 1초 대기 성공 후에 특정코드 실행 시키기
+        var 약속 = new Promise(function(성공, 실패){
+            setTimeout(function(){
+                실패();
+            },2000);
+        })
+        약속.then(function(){
+            console.log('2초후에 실행되었습니다.');
+        }).catch(function(){
+            console.log('실행이 취소되었습니다.');
+        });
+
+//promise 3가지 상태
+//1. 성공하면 Resolved
+//2. 판정 대기중이면 pending
+//3. 실패하면 rejected
+//성공을 실패나 대기상태로 다시 되돌릴 순 없습니다.
+
     </script>
 </body>
 </html>
